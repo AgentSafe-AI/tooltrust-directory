@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.4` |
 | **Vendor** | openags |
-| **Stars** | ⭐ 2961 |
+| **Stars** | ⭐ 2971 |
 | **Language** | Python |
 | **Source** | [paper-search-mcp](https://github.com/openags/paper-search-mcp) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

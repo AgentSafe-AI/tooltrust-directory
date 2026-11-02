@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.4.0` |
 | **Vendor** | jjlabsio |
-| **Stars** | ⭐ 181 |
+| **Stars** | ⭐ 184 |
 | **npm Package** | `korea-stock-mcp` |
 | **npm Downloads (30d)** | 708 |
 | **Language** | TypeScript |

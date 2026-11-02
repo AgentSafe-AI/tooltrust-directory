@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 102 |
 | **Language** | JavaScript |
 | **Source** | [outlook-mcp](https://github.com/ryaker/outlook-mcp) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

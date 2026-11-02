@@ -1,14 +1,14 @@
 {
   "tool_id": "next-ai-draw-io",
   "version": "0.5.1",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-11-01T03:30:15.177358789Z",
+  "scan_date": "2026-11-02T03:39:41Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DayuanJiang/next-ai-draw-io",
   "category": "Developer Tools",
   "vendor": "DayuanJiang",
-  "stars": 36529,
+  "stars": 36548,
   "npm_package": "next-ai-draw-io",
   "npm_downloads_monthly": 121,
   "license": "Apache-2.0",
@@ -16,20 +16,36 @@
   "description": "Draw and edit draw.io diagrams by chatting with an AI. Web app, desktop app, and an MCP server for Claude Code, Cursor, Codex and VS Code.",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "create_diagram"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "create_diagram"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 28,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "packages/mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 230,
+            "snippet": "new McpServer(",
+            "file": "packages/mcp-server/src/index.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 273,
+            "snippet": ".registerTool(",
+            "file": "packages/mcp-server/src/index.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -37,9 +53,10 @@
     "high": 0,
     "medium": 0,
     "low": 0,
-    "info": 2
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -62,24 +79,6 @@
       "snippet": ".registerTool(",
       "file": "packages/mcp-server/src/index.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "create_diagram"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "create_diagram",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: draw.io"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -169,6 +168,12 @@
     },
     {
       "scan_date": "2026-10-31T03:31:08Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.5.1"
+    },
+    {
+      "scan_date": "2026-11-01T03:30:15Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.5.1"

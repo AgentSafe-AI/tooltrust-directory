@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.0` |
 | **Vendor** | isdaniel |
-| **Stars** | ⭐ 60 |
+| **Stars** | ⭐ 61 |
 | **Language** | Python |
 | **Source** | [isdaniel-mcp-weather-server](https://github.com/isdaniel/mcp_weather_server) |
 | **Scan Date** | 2026-10-15 |

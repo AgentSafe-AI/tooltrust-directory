@@ -1,9 +1,9 @@
 {
   "tool_id": "malinoto-tracepass-mcp-server",
-  "version": "1.23.3",
+  "version": "1.24.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-11-01T03:40:11.093479459Z",
+  "scan_date": "2026-11-02T03:51:14.47399996Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/malinoto/tracepass-mcp-server",
   "category": "Developer Tools",
@@ -142,14 +142,38 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "tracepass_scope"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "tracepass_passport_lifecycle"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "tracepass_passport_lifecycle"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "tracepass_passport_lifecycle"
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 4,
-    "info": 12
+    "low": 5,
+    "info": 14
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -191,7 +215,7 @@
     },
     {
       "kind": "tool_definition",
-      "line": 94,
+      "line": 95,
       "snippet": ".registerTool(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -221,6 +245,7 @@
   "tool_names": [
     "tracepass_epcis",
     "tracepass_passport_fields",
+    "tracepass_passport_lifecycle",
     "tracepass_passport_parties",
     "tracepass_passports",
     "tracepass_products",
@@ -300,6 +325,16 @@
         "hardcoded domain: battery.capacityKWh",
         "hardcoded domain: battery.use",
         "hardcoded domain: facts.ownBrand"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "tracepass_passport_lifecycle",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -935,6 +970,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.23.2"
+    },
+    {
+      "scan_date": "2026-11-01T03:40:11Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.23.3"
     }
   ]
 }

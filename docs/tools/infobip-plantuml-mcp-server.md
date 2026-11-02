@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.4` |
 | **Vendor** | infobip |
-| **Stars** | ⭐ 54 |
+| **Stars** | ⭐ 55 |
 | **npm Package** | `plantuml-mcp-server` |
 | **npm Downloads (30d)** | 2.6k |
 | **Language** | JavaScript |

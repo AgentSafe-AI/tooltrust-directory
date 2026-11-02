@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 91722 |
+| **Stars** | ⭐ 91741 |
 | **npm Package** | `@modelcontextprotocol/server-brave-search` |
 | **npm Downloads (30d)** | 93.8k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-brave-search](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

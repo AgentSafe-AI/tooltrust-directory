@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.0` |
 | **Vendor** | sepehr071 |
-| **Stars** | ⭐ 179 |
+| **Stars** | ⭐ 192 |
 | **Language** | Python |
 | **Source** | [iran-mcp](https://github.com/sepehr071/iran-mcp) |
 | **Scan Date** | 2026-11-01 |

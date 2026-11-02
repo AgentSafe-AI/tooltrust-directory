@@ -4,16 +4,16 @@
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **A** |
+| **Grade** | **I** |
 | **Risk Score** | 0 |
 | **Version** | `0.5.1` |
 | **Vendor** | DayuanJiang |
-| **Stars** | ⭐ 36529 |
+| **Stars** | ⭐ 36548 |
 | **npm Package** | `next-ai-draw-io` |
 | **npm Downloads (30d)** | 121 |
 | **Language** | TypeScript |
 | **Source** | [next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,31 +26,19 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 0 |
-| Info     | 2 |
+| Info     | 1 |
 
 ## Detailed Findings
 
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ `AS-018` — Embedded MCP Server Detected
 
 **Severity:** Info
 
 **Description:**
-declared capabilities: filesystem access
+Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
+Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
 
 ---
 

@@ -1,14 +1,14 @@
 {
   "tool_id": "ui-tars-desktop",
   "version": "0.3.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-11-01T03:30:12.32587891Z",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-11-02T03:39:39Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/bytedance/UI-TARS-desktop",
   "category": "Developer Tools",
   "vendor": "bytedance",
-  "stars": 39491,
+  "stars": 39510,
   "npm_package": "monorepo",
   "npm_downloads_monthly": 729,
   "license": "Apache-2.0",
@@ -16,126 +16,89 @@
   "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
   "findings": [
     {
-      "id": "AS-002",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "autonomous_desktop_app_architect"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "autonomous_desktop_app_architect"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "autonomous_desktop_app_architect"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "generate_electron_main_and_preload"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "generate_electron_main_and_preload"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: code/command execution, filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "build_tauri_commands_and_state"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "build_tauri_commands_and_state"
-    },
-    {
-      "id": "AS-011",
-      "severity": "Low",
-      "title": "DoS Resilience — Missing Rate Limit / Timeout",
-      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
-      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "build_tauri_commands_and_state"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "build_tauri_commands_and_state"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "implement_native_features"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "implement_native_features"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "implement_native_features"
-    },
-    {
-      "id": "AS-010",
-      "severity": "Info",
-      "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
-      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
-      "tool_name": "prepare_desktop_release_pipeline"
-    },
-    {
-      "id": "AS-014",
-      "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "prepare_desktop_release_pipeline"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/agent-infra/create-new-mcp/template-default/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 5,
+            "snippet": "new McpServer(",
+            "file": "packages/agent-infra/create-new-mcp/template-default/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 11,
+            "snippet": ".registerTool(",
+            "file": "packages/agent-infra/create-new-mcp/template-default/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 9,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/agent-infra/mcp-servers/browser/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 694,
+            "snippet": "new McpServer(",
+            "file": "packages/agent-infra/mcp-servers/browser/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 718,
+            "snippet": ".registerTool(",
+            "file": "packages/agent-infra/mcp-servers/browser/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
+            "line": 9,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "packages/agent-infra/mcp-servers/commands/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 31,
+            "snippet": "new McpServer(",
+            "file": "packages/agent-infra/mcp-servers/commands/src/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 38,
+            "snippet": ".registerTool(",
+            "file": "packages/agent-infra/mcp-servers/commands/src/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 1,
-    "info": 13
+    "low": 0,
+    "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -200,62 +163,6 @@
       "snippet": ".registerTool(",
       "file": "packages/agent-infra/mcp-servers/commands/src/server.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "autonomous_desktop_app_architect",
-    "build_tauri_commands_and_state",
-    "generate_electron_main_and_preload",
-    "implement_native_features",
-    "prepare_desktop_release_pipeline"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "autonomous_desktop_app_architect",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "generate_electron_main_and_preload",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "hardcoded domain: ipcMain.handle"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "build_tauri_commands_and_state",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "hardcoded domain: tauri.conf.json"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "implement_native_features",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "prepare_desktop_release_pipeline",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -429,6 +336,12 @@
     },
     {
       "scan_date": "2026-10-31T03:31:07Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.3.1"
+    },
+    {
+      "scan_date": "2026-11-01T03:30:12Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.1"

@@ -1,26 +1,50 @@
 {
   "tool_id": "codex-with-chatgpt",
   "version": "0.1.4",
-  "grade": "A",
+  "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-11-01T03:32:19.64155435Z",
+  "scan_date": "2026-11-02T03:42:00Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/XiaoDuoYa/codex-with-chatgpt",
   "category": "Developer Tools",
   "vendor": "XiaoDuoYa",
-  "stars": 7627,
+  "stars": 7633,
   "npm_package": "codex-with-chatgpt",
   "license": "MIT",
   "language": "TypeScript",
   "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
   "findings": [
     {
-      "id": "AS-014",
+      "id": "AS-018",
       "severity": "Info",
-      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
-      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
-      "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "hasdata_chatgpt_chat_getChatgptAnswer"
+      "title": "Embedded MCP Server Detected",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
+      "metadata": {
+        "evidence": [
+          {
+            "kind": "import",
+            "line": 1,
+            "snippet": "\"@modelcontextprotocol/sdk",
+            "file": "src/mcp/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 197,
+            "snippet": "new McpServer(",
+            "file": "src/mcp/server.ts",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 202,
+            "snippet": ".registerTool(",
+            "file": "src/mcp/server.ts",
+            "language": "typescript"
+          }
+        ]
+      }
     }
   ],
   "summary": {
@@ -31,6 +55,7 @@
     "info": 1
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
   "has_embedded_mcp": true,
   "embedded_mcp_evidence": [
     {
@@ -53,18 +78,6 @@
       "snippet": ".registerTool(",
       "file": "src/mcp/server.ts",
       "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "hasdata_chatgpt_chat_getChatgptAnswer"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "hasdata_chatgpt_chat_getChatgptAnswer",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     }
   ],
   "scan_history": [
@@ -172,6 +185,12 @@
     },
     {
       "scan_date": "2026-10-31T03:33:18Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "0.1.4"
+    },
+    {
+      "scan_date": "2026-11-01T03:32:19Z",
       "grade": "A",
       "risk_score": 0,
       "version": "0.1.4"

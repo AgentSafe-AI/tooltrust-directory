@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.9` |
 | **Vendor** | k-jarzyna |
-| **Stars** | ⭐ 66 |
+| **Stars** | ⭐ 65 |
 | **npm Package** | `@k-jarzyna/mcp-miro` |
 | **npm Downloads (30d)** | 438 |
 | **Language** | TypeScript |

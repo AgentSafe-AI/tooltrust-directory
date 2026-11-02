@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 180 |
 | **Language** | Python |
 | **Source** | [mcp-salesforce](https://github.com/smn2gnt/MCP-Salesforce) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

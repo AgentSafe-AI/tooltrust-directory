@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2026.10.10` |
 | **Vendor** | pnoker |
-| **Stars** | ⭐ 1267 |
+| **Stars** | ⭐ 1268 |
 | **Language** | Java |
 | **Source** | [iot-dc3](https://github.com/pnoker/iot-dc3) |
 | **Scan Date** | 2026-11-01 |

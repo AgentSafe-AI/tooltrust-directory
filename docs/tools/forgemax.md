@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.1` |
 | **Vendor** | postrv |
-| **Stars** | ⭐ 156 |
+| **Stars** | ⭐ 157 |
 | **Language** | Rust |
 | **Source** | [forgemax](https://github.com/postrv/forgemax) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -12,7 +12,7 @@ No authentication required.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [mdenius-titan-store](https://smithery.ai/server/mdenius/titan-store) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-02 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
