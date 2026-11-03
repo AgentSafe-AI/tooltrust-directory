@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.2.5` |
 | **Vendor** | knowall-ai |
-| **Stars** | ⭐ 69 |
+| **Stars** | ⭐ 68 |
 | **npm Package** | `@knowall-ai/mcp-neo4j-agent-memory` |
 | **npm Downloads (30d)** | 111 |
 | **Language** | JavaScript |

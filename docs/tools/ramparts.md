@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.10` |
 | **Vendor** | highflame-ai |
-| **Stars** | ⭐ 98 |
+| **Stars** | ⭐ 99 |
 | **Language** | Rust |
 | **Source** | [ramparts](https://github.com/highflame-ai/ramparts) |
-| **Scan Date** | 2026-11-02 |
+| **Scan Date** | 2026-11-03 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.24.0` |
 | **Vendor** | rohitg00 |
-| **Stars** | ⭐ 964 |
+| **Stars** | ⭐ 967 |
 | **npm Package** | `kubectl-mcp-server` |
 | **npm Downloads (30d)** | 361 |
 | **Language** | Python |

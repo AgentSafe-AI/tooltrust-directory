@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | harish-gaggar |
-| **Stars** | ⭐ 553 |
+| **Stars** | ⭐ 590 |
 | **Language** | Python |
 | **Source** | [mcp-server-gateway](https://github.com/harish-gaggar/mcp-server-gateway) |
-| **Scan Date** | 2026-11-02 |
+| **Scan Date** | 2026-11-03 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

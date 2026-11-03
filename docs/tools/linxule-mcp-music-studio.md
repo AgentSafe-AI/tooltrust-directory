@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.3` |
 | **Vendor** | linxule |
-| **Stars** | ⭐ 74 |
+| **Stars** | ⭐ 76 |
 | **npm Package** | `mcp-music-studio` |
 | **npm Downloads (30d)** | 5.9k |
 | **Language** | TypeScript |

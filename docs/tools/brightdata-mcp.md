@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `4.2.0` |
+| **Version** | `4.3.0` |
 | **Vendor** | brightdata |
-| **Stars** | ⭐ 2703 |
+| **Stars** | ⭐ 2706 |
 | **npm Package** | `@brightdata/mcp` |
-| **npm Downloads (30d)** | 51.2k |
+| **npm Downloads (30d)** | 52.7k |
 | **Language** | JavaScript |
 | **Source** | [brightdata-mcp](https://github.com/brightdata/brightdata-mcp) |
-| **Scan Date** | 2026-11-02 |
+| **Scan Date** | 2026-11-03 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -107,7 +107,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
