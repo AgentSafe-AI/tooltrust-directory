@@ -1,6 +1,6 @@
 # 🟢 pipeshub-ai
 
-> The open-source context layer for AI agents. PipesHub turns your company's knowledge (Slack, Drive, Jira, GitHub, Microsoft 365 and 40+ connectors) into a permission-aware workspace that agents can search, grep, navigate and cite. MCP, SDKs and built-in agents. Self-hosted.
+> The open-source context layer for AI agents. PipesHub turns your company's knowledge (Slack, Drive, Jira, GitHub, Microsoft 365 and 50+ connectors) into a permission-aware workspace that agents can search, grep, navigate and cite. MCP, SDKs and built-in agents. Self-hosted.
 
 | Field | Value |
 |-------|-------|
@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0.0` |
 | **Vendor** | pipeshub-ai |
-| **Stars** | ⭐ 3903 |
+| **Stars** | ⭐ 3905 |
 | **Language** | Python |
 | **Source** | [pipeshub-ai](https://github.com/pipeshub-ai/pipeshub-ai) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

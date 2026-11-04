@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.1` |
 | **Vendor** | bytedance |
-| **Stars** | ⭐ 39528 |
+| **Stars** | ⭐ 39539 |
 | **npm Package** | `monorepo` |
-| **npm Downloads (30d)** | 725 |
+| **npm Downloads (30d)** | 719 |
 | **Language** | TypeScript |
 | **Source** | [ui-tars-desktop](https://github.com/bytedance/UI-TARS-desktop) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

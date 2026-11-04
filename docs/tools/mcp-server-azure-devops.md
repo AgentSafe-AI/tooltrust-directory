@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.11` |
 | **Vendor** | Tiberriver256 |
-| **Stars** | ⭐ 395 |
+| **Stars** | ⭐ 399 |
 | **npm Package** | `@tiberriver256/mcp-server-azure-devops` |
 | **npm Downloads (30d)** | 29.4k |
 | **Language** | TypeScript |

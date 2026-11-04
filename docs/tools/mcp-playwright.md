@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.12` |
 | **Vendor** | executeautomation |
-| **Stars** | ⭐ 5675 |
+| **Stars** | ⭐ 5674 |
 | **npm Package** | `@executeautomation/playwright-mcp-server` |
 | **npm Downloads (30d)** | 45.5k |
 | **Language** | TypeScript |

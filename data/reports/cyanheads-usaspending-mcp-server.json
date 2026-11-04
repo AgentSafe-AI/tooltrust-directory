@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-usaspending-mcp-server",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-03T04:57:17.424880036Z",
+  "scan_date": "2026-11-04T04:17:00.023053028Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/usaspending-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 5,
   "npm_package": "@cyanheads/usaspending-mcp-server",
-  "npm_downloads_monthly": 1865,
+  "npm_downloads_monthly": 1890,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Access US federal award, recipient, agency, and spending analytics data from USAspending.gov via MCP. STDIO or Streamable HTTP.",
@@ -179,7 +179,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "usaspending_get_agency"
     },
@@ -478,6 +478,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "reads_files",
         "uses_network"
       ],
       "destinations": [
@@ -1092,6 +1093,12 @@
     },
     {
       "scan_date": "2026-11-02T03:50:25Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.7.0"
+    },
+    {
+      "scan_date": "2026-11-03T04:57:17Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.7.0"

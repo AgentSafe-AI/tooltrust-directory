@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.9` |
 | **Vendor** | rekog-labs |
-| **Stars** | ⭐ 726 |
+| **Stars** | ⭐ 729 |
 | **npm Package** | `mcp-nest-workspace` |
 | **Language** | TypeScript |
 | **Source** | [mcp-nest](https://github.com/rekog-labs/MCP-Nest) |

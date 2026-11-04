@@ -8,10 +8,10 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0.0-rc.100` |
 | **Vendor** | xerj-org |
-| **Stars** | ⭐ 18831 |
+| **Stars** | ⭐ 18958 |
 | **Language** | Rust |
 | **Source** | [xerj](https://github.com/xerj-org/xerj) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

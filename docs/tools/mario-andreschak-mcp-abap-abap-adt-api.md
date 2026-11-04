@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.1` |
 | **Vendor** | mario-andreschak |
-| **Stars** | ⭐ 204 |
+| **Stars** | ⭐ 211 |
 | **npm Package** | `mcp-abap-abap-adt-api` |
 | **npm Downloads (30d)** | 669 |
 | **Language** | TypeScript |

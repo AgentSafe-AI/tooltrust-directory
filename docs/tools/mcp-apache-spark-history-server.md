@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.3.0` |
 | **Vendor** | kubeflow |
-| **Stars** | ⭐ 205 |
+| **Stars** | ⭐ 206 |
 | **Language** | Python |
 | **Source** | [mcp-apache-spark-history-server](https://github.com/kubeflow/mcp-apache-spark-history-server) |
 | **Scan Date** | 2026-10-15 |

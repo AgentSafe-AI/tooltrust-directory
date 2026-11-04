@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-protein-mcp-server",
-  "version": "0.8.7",
+  "version": "0.9.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-03T04:57:06.018492256Z",
+  "scan_date": "2026-11-04T04:16:44.820652573Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/protein-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 6,
   "npm_package": "@cyanheads/protein-mcp-server",
-  "npm_downloads_monthly": 1076,
+  "npm_downloads_monthly": 1085,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Federated protein structure \u0026 annotation across experimental (PDB) and predicted (AlphaFold) models via MCP. STDIO or Streamable HTTP.",
@@ -19,7 +19,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "protein_search_structures"
     },
@@ -27,7 +27,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "protein_search_structures"
     },
@@ -75,7 +75,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
+      "description": "declared capabilities: filesystem access, database access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "protein_find_similar"
     },
@@ -83,7 +83,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 12 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "protein_find_similar"
     },
@@ -201,8 +201,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files",
-        "uses_network"
+        "uses_network",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -211,6 +211,9 @@
       "tool_name": "protein_find_similar",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -718,6 +721,12 @@
     },
     {
       "scan_date": "2026-11-02T03:50:23Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.8.7"
+    },
+    {
+      "scan_date": "2026-11-03T04:57:06Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.8.7"

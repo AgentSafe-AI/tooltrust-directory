@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `6.14.1` |
+| **Version** | `7.5.1` |
 | **Vendor** | samugit83 |
-| **Stars** | ⭐ 3268 |
+| **Stars** | ⭐ 3278 |
 | **Language** | Python |
 | **Source** | [redamon](https://github.com/samugit83/redamon) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
 Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.

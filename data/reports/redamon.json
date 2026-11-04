@@ -1,14 +1,14 @@
 {
   "tool_id": "redamon",
-  "version": "6.14.1",
+  "version": "7.5.1",
   "grade": "I",
   "risk_score": 0,
-  "scan_date": "2026-11-03T04:51:26Z",
+  "scan_date": "2026-11-04T04:10:59Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/samugit83/redamon",
   "category": "Developer Tools",
   "vendor": "samugit83",
-  "stars": 3268,
+  "stars": 3278,
   "license": "MIT",
   "language": "Python",
   "description": "Open-source, self-hosted AI penetration testing framework: maps your attack surface into a graph, autonomously exploits it from a Kali sandbox with human approval gates, and opens PRs that fix what it finds. MCP both ways: plug in any MCP server as a tool, or drive RedAmon from Claude Code or your own agent.",
@@ -17,29 +17,30 @@
       "id": "AS-018",
       "severity": "Info",
       "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in python source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
           {
             "kind": "import",
-            "line": 22,
-            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-            "language": "python"
+            "line": 14,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "webapp/src/lib/mcp/server.ts",
+            "language": "typescript"
           },
           {
             "kind": "init",
-            "line": 32,
-            "snippet": "FastMCP(",
-            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-            "language": "python"
+            "line": 307,
+            "snippet": "new McpServer(",
+            "file": "webapp/src/lib/mcp/server.ts",
+            "language": "typescript"
           },
           {
             "kind": "tool_definition",
-            "line": 34,
-            "snippet": "@mcp.tool(",
-            "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-            "language": "python"
+            "line": 341,
+            "snippet": ".registerTool(",
+            "file": "webapp/src/lib/mcp/server.ts",
+            "language": "typescript"
           }
         ]
       }
@@ -58,23 +59,24 @@
   "embedded_mcp_evidence": [
     {
       "kind": "import",
-      "line": 22,
-      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-      "language": "python"
+      "line": 14,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "webapp/src/lib/mcp/server.ts",
+      "language": "typescript"
     },
     {
       "kind": "init",
-      "line": 32,
-      "snippet": "FastMCP(",
-      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-      "language": "python"
+      "line": 307,
+      "snippet": "new McpServer(",
+      "file": "webapp/src/lib/mcp/server.ts",
+      "language": "typescript"
     },
     {
       "kind": "tool_definition",
-      "line": 34,
-      "snippet": "@mcp.tool(",
-      "file": "testing/guinea_pigs/ai_surface_target/mcp_poison_server.py",
-      "language": "python"
+      "line": 341,
+      "snippet": ".registerTool(",
+      "file": "webapp/src/lib/mcp/server.ts",
+      "language": "typescript"
     }
   ]
 }

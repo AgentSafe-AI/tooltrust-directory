@@ -6,12 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2026.10.5` |
+| **Version** | `2026.11.1` |
 | **Vendor** | rohitg00 |
-| **Stars** | ⭐ 76423 |
+| **Stars** | ⭐ 76718 |
+| **npm Package** | `ai-engineering-from-scratch-site` |
 | **Language** | Python |
 | **Source** | [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 157 |
 | **Language** | Rust |
 | **Source** | [forgemax](https://github.com/postrv/forgemax) |
-| **Scan Date** | 2026-11-03 |
+| **Scan Date** | 2026-11-04 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

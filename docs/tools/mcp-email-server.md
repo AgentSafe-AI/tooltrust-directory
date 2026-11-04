@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.10.1` |
 | **Vendor** | ai-zerolab |
-| **Stars** | ⭐ 361 |
+| **Stars** | ⭐ 377 |
 | **Language** | Python |
 | **Source** | [mcp-email-server](https://github.com/ai-zerolab/mcp-email-server) |
 | **Scan Date** | 2026-10-15 |

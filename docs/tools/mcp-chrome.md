@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | hangwin |
-| **Stars** | ⭐ 12523 |
+| **Stars** | ⭐ 12533 |
 | **npm Package** | `mcp-chrome-bridge-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [mcp-chrome](https://github.com/hangwin/mcp-chrome) |

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.1.0` |
 | **Vendor** | aashari |
-| **Stars** | ⭐ 163 |
+| **Stars** | ⭐ 164 |
 | **npm Package** | `@aashari/mcp-server-atlassian-bitbucket` |
 | **npm Downloads (30d)** | 23.0k |
 | **Language** | TypeScript |

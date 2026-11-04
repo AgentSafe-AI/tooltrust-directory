@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.0+git.958836e` |
 | **Vendor** | magichourhq |
-| **Stars** | ⭐ 8 |
+| **Stars** | ⭐ 9 |
 | **Language** | Python |
 | **Source** | [magic-hour-mcp](https://github.com/magichourhq/magic-hour-mcp/tree/958836e73d0fe0ba090f162654e2c922ad14292e) |
 | **Scan Date** | 2026-10-14 |
