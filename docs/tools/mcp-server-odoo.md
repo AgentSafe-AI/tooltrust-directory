@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.9.0` |
 | **Vendor** | ivnvxd |
-| **Stars** | ⭐ 409 |
+| **Stars** | ⭐ 412 |
 | **Language** | Python |
 | **Source** | [mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo) |
 | **Scan Date** | 2026-11-01 |

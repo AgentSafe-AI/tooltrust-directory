@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.11.0` |
 | **Vendor** | MemPalace |
-| **Stars** | ⭐ 60199 |
+| **Stars** | ⭐ 60370 |
 | **Language** | Python |
 | **Source** | [mempalace](https://github.com/MemPalace/mempalace) |
 | **Scan Date** | 2026-11-01 |

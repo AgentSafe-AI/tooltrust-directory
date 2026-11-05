@@ -1,19 +1,19 @@
 # 🟢 kordoc
 
-> 모두 파싱해버리겠다 — HWP·HWPX·PDF·Office 문서를 Markdown으로. 양식 자동 채우기와 신구대조를 갖춘 CLI·MCP 서버 | Convert Korean documents (HWP, HWPX, PDF, Office) to Markdown — CLI and MCP server with form filling and diff
+> 한국 문서를 읽고·고치고·새로 쓰는 AI 문서 도구 — HWP·HWPX·PDF·오피스·스캔(OCR)을 Markdown으로, 신구대조·서식 보존 편집·Markdown→HWPX 작성·HWP→HWPX 변환·양식 채우기·공문서 검수까지. 라이브러리·CLI·MCP | Read, diff, edit, write and convert Korean documents (HWP, HWPX, PDF, Office, scans) — library, CLI and MCP server
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `4.24.42` |
+| **Version** | `4.24.45` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2904 |
+| **Stars** | ⭐ 2917 |
 | **npm Package** | `kordoc` |
-| **npm Downloads (30d)** | 180.3k |
+| **npm Downloads (30d)** | 185.9k |
 | **Language** | TypeScript |
 | **Source** | [kordoc](https://github.com/chrisryugj/kordoc) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

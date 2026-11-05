@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.9` |
 | **Vendor** | benborla |
-| **Stars** | ⭐ 2192 |
+| **Stars** | ⭐ 2205 |
 | **npm Package** | `@benborla29/mcp-server-mysql` |
 | **npm Downloads (30d)** | 55.0k |
 | **Language** | JavaScript |

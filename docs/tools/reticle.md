@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `3.9.0` |
 | **Vendor** | reticlehq |
-| **Stars** | ⭐ 1308 |
+| **Stars** | ⭐ 1311 |
 | **npm Package** | `reticle-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [reticle](https://github.com/reticlehq/reticle) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

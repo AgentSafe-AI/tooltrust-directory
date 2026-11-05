@@ -1,19 +1,7 @@
 {
-  "tool_id": "mcp-server-sequential-thinking",
-  "version": "2.2.0",
-  "grade": "A",
-  "risk_score": 0,
-  "scan_date": "2026-11-04T04:05:33.085384914Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
   "category": "Developer Tools",
-  "vendor": "modelcontextprotocol",
-  "stars": 91775,
-  "npm_package": "@modelcontextprotocol/server-sequential-thinking",
-  "npm_downloads_monthly": 640187,
-  "license": "NOASSERTION",
-  "language": "TypeScript",
-  "description": "Model Context Protocol Servers",
+  "contributors": 427,
+  "description": "Model Context Protocol Reference Servers",
   "findings": [
     {
       "id": "AS-002",
@@ -181,6 +169,22 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "git_merge"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "git_merge"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "git_show"
     },
     {
@@ -206,122 +210,47 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "git_branch"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "git_remote"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "git_remote"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "git_remote"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0,
-    "info": 24
-  },
+  "forks": 11908,
+  "grade": "A",
+  "language": "TypeScript",
+  "last_commit_at": "2026-11-04T21:01:13Z",
+  "last_release_at": "2026-11-04T21:28:41Z",
+  "latest_release_name": "v2.3.0",
+  "latest_release_tag": "v2.3.0",
+  "latest_release_url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0",
+  "latest_release_version": "v2.3.0",
+  "license": "NOASSERTION",
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "tool_names": [
-    "git_add",
-    "git_branch",
-    "git_checkout",
-    "git_commit",
-    "git_create_branch",
-    "git_diff",
-    "git_diff_staged",
-    "git_diff_unstaged",
-    "git_log",
-    "git_reset",
-    "git_show",
-    "git_status"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "git_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_diff_unstaged",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_diff_staged",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_diff",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_commit",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_add",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_reset",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_log",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_create_branch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_checkout",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_show",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    },
-    {
-      "tool_name": "git_branch",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
-    }
-  ],
+  "npm_downloads_monthly": 653528,
+  "npm_package": "@modelcontextprotocol/server-sequential-thinking",
+  "risk_score": 2,
+  "scan_date": "2026-11-05T04:27:40.012495652Z",
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:35:28Z",
@@ -1696,6 +1625,151 @@
       "grade": "A",
       "risk_score": 0,
       "version": "2.2.0"
+    },
+    {
+      "scan_date": "2026-11-04T04:05:33Z",
+      "grade": "A",
+      "risk_score": 0,
+      "version": "2.2.0"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+  "stars": 91800,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 28
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "git_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_diff_unstaged",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_diff_staged",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_diff",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_commit",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_add",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_reset",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_log",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_create_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_checkout",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_merge",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_show",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_branch",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "git_remote",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
+  "tool_id": "mcp-server-sequential-thinking",
+  "tool_names": [
+    "git_add",
+    "git_branch",
+    "git_checkout",
+    "git_commit",
+    "git_create_branch",
+    "git_diff",
+    "git_diff_staged",
+    "git_diff_unstaged",
+    "git_log",
+    "git_merge",
+    "git_remote",
+    "git_reset",
+    "git_show",
+    "git_status"
+  ],
+  "vendor": "modelcontextprotocol",
+  "version": "2.3.0"
 }

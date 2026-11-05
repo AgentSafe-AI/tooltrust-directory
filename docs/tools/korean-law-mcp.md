@@ -1,19 +1,19 @@
 # 🟢 korean-law-mcp
 
-> 법제처 국가법령정보를 LLM에서 바로 조회하는 MCP 서버. 법령·판례·조례 검색과 인용 검증 | MCP server for Korean law — search statutes, precedents, and ordinances, and verify citations
+> 법령·판례를 AI가 찾고 인용까지 검증하는 MCP 서버 — 법제처 API 42개를 도구 10개로: 법령·조문·별표, 판례·헌재·해석례 23개 도메인, 조례 정비 레이더, 신구조문대비표 | MCP server for Korean law — statutes, precedents, ordinances, comparison tables and citation verification
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `4.15.20` |
+| **Version** | `4.15.23` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2831 |
+| **Stars** | ⭐ 2837 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 22.0k |
+| **npm Downloads (30d)** | 25.8k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-11-01 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -25,8 +25,8 @@
 | Critical | 0 |
 | High     | 0 |
 | Medium   | 0 |
-| Low      | 38 |
-| Info     | 98 |
+| Low      | 5 |
+| Info     | 15 |
 
 ## Detailed Findings
 
@@ -35,7 +35,7 @@
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access, database access, environment variables
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -59,34 +59,10 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
@@ -95,7 +71,19 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -107,7 +95,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: environment variables
+declared capabilities: database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -119,7 +107,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -131,139 +119,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -299,7 +155,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -311,319 +167,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 16 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 12 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -642,15 +186,15 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 
 ---
 
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
 
-**Severity:** Low
+**Severity:** Info
 
 **Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+Review and remediate the identified issue.
 
 ---
 
@@ -659,7 +203,19 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -671,43 +227,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 13 properties (threshold: 10)
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -731,595 +251,7 @@ Declare explicit rate-limit, timeout, and retry configuration for all network an
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 18 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 12 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.
@@ -1331,331 +263,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access, environment variables
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Low
-
-**Description:**
-input schema exposes 13 properties (threshold: 10)
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: network access, database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
-
-**Severity:** Low
-
-**Description:**
-tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
-
-**Recommendation:**
-Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Info
-
-**Description:**
-declared capabilities: database access
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
-
-**Recommendation:**
-Review and remediate the identified issue.
-
----
-
-### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
-
-**Severity:** Info
-
-**Description:**
-Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
 
 **Recommendation:**
 Review and remediate the identified issue.

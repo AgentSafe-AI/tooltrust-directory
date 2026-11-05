@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.8.0` |
 | **Vendor** | atilaahmettaner |
-| **Stars** | ⭐ 5198 |
+| **Stars** | ⭐ 5208 |
 | **Language** | Python |
 | **Source** | [tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

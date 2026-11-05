@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.1` |
 | **Vendor** | DayuanJiang |
-| **Stars** | ⭐ 36657 |
+| **Stars** | ⭐ 36690 |
 | **npm Package** | `next-ai-draw-io` |
-| **npm Downloads (30d)** | 123 |
+| **npm Downloads (30d)** | 114 |
 | **Language** | TypeScript |
 | **Source** | [next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

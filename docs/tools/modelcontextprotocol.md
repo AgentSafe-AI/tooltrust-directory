@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.4.0` |
 | **Vendor** | perplexityai |
-| **Stars** | ⭐ 2595 |
+| **Stars** | ⭐ 2609 |
 | **npm Package** | `@perplexity-ai/mcp-server` |
 | **npm Downloads (30d)** | 60.6k |
 | **Language** | TypeScript |

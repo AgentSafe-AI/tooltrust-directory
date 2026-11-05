@@ -10,10 +10,10 @@
 | **Vendor** | idosal |
 | **Stars** | ⭐ 8504 |
 | **npm Package** | `git-mcp` |
-| **npm Downloads (30d)** | 168 |
+| **npm Downloads (30d)** | 167 |
 | **Language** | TypeScript |
 | **Source** | [git-mcp](https://github.com/idosal/git-mcp) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

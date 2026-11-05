@@ -10,10 +10,10 @@
 | **Vendor** | tsmztech |
 | **Stars** | ⭐ 165 |
 | **npm Package** | `@tsmztech/mcp-server-salesforce` |
-| **npm Downloads (30d)** | 5.7k |
+| **npm Downloads (30d)** | 6.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -1,9 +1,9 @@
 {
   "tool_id": "serpapi-mcp",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-11-04T04:15:02.118010846Z",
+  "scan_date": "2026-11-05T04:34:42.407028045Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/serpapi/serpapi-mcp",
   "category": "Developer Tools",
@@ -36,6 +36,14 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "search"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "extract"
     },
     {
       "id": "AS-002",
@@ -91,10 +99,11 @@
     "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 6
+    "info": 7
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
+    "extract",
     "search",
     "search_dashboard",
     "search_table"
@@ -107,6 +116,13 @@
       "behavior": [
         "uses_network"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "extract",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -425,6 +441,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "2.0.0"
+    },
+    {
+      "scan_date": "2026-11-04T04:15:02Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.1.0"
     }
   ]
 }

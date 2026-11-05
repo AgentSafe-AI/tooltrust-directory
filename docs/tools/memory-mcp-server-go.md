@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.5.5` |
 | **Vendor** | okooo5km |
-| **Stars** | ⭐ 93 |
+| **Stars** | ⭐ 94 |
 | **Language** | Go |
 | **Source** | [memory-mcp-server-go](https://github.com/okooo5km/memory-mcp-server-go) |
 | **Scan Date** | 2026-10-15 |

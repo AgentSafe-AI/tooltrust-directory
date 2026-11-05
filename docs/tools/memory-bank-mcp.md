@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.2.1` |
 | **Vendor** | alioshr |
-| **Stars** | ⭐ 921 |
+| **Stars** | ⭐ 924 |
 | **npm Package** | `@allpepper/memory-bank-mcp` |
 | **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |

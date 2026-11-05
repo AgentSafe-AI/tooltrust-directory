@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `0.4.2` |
+| **Version** | `0.4.3` |
 | **Vendor** | vmoranv |
-| **Stars** | ⭐ 2095 |
+| **Stars** | ⭐ 2098 |
 | **npm Package** | `@jshookmcp/jshook` |
-| **npm Downloads (30d)** | 4.0k |
+| **npm Downloads (30d)** | 4.7k |
 | **Language** | TypeScript |
 | **Source** | [jshookmcp](https://github.com/vmoranv/jshookmcp) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

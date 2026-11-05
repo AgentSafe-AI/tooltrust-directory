@@ -1,6 +1,18 @@
 {
+  "tool_id": "mcp-server-cloudflare",
+  "version": "workers-observability@0.6.0",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-11-05T04:30:58.592437839Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
   "category": "Developer Tools",
-  "contributors": 43,
+  "vendor": "cloudflare",
+  "stars": 4446,
+  "npm_package": "@cloudflare/mcp-server-cloudflare",
+  "npm_downloads_monthly": 9859,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Product specific Cloudflare MCP servers",
   "findings": [
     {
@@ -60,21 +72,58 @@
       "tool_name": "execute"
     }
   ],
-  "forks": 569,
-  "grade": "C",
-  "language": "TypeScript",
-  "last_commit_at": "2026-10-22T15:20:22Z",
-  "last_release_at": "2026-10-22T15:22:11Z",
-  "latest_release_name": "docs-ai-search@0.5.0",
-  "latest_release_tag": "docs-ai-search@0.5.0",
-  "latest_release_url": "https://github.com/cloudflare/mcp-server-cloudflare/releases/tag/docs-ai-search%400.5.0",
-  "latest_release_version": "docs-ai-search@0.5.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "info": 4
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 10097,
-  "npm_package": "@cloudflare/mcp-server-cloudflare",
-  "risk_score": 27,
-  "scan_date": "2026-11-04T04:10:09.319467773Z",
+  "tool_names": [
+    "execute",
+    "search"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "search",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Object.entries",
+        "hardcoded domain: method.toUpperCase",
+        "hardcoded domain: op.summary",
+        "hardcoded domain: op.tags",
+        "hardcoded domain: results.push",
+        "hardcoded domain: spec.paths",
+        "hardcoded domain: t.toLowerCase"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "execute",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (account_id)",
+        "hardcoded domain: Date.now",
+        "hardcoded domain: JSON.stringify",
+        "hardcoded domain: cloudflare.request",
+        "hardcoded domain: e.respondWith"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:36:12Z",
@@ -1431,63 +1480,12 @@
       "grade": "C",
       "risk_score": 27,
       "version": "workers-observability@0.6.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cloudflare/mcp-server-cloudflare",
-  "stars": 4442,
-  "summary": {
-    "critical": 1,
-    "high": 0,
-    "medium": 0,
-    "low": 2,
-    "info": 4
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "search",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Object.entries",
-        "hardcoded domain: method.toUpperCase",
-        "hardcoded domain: op.summary",
-        "hardcoded domain: op.tags",
-        "hardcoded domain: results.push",
-        "hardcoded domain: spec.paths",
-        "hardcoded domain: t.toLowerCase"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
     {
-      "tool_name": "execute",
-      "action": "REQUIRE_APPROVAL",
+      "scan_date": "2026-11-04T04:10:09Z",
       "grade": "C",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (account_id)",
-        "hardcoded domain: Date.now",
-        "hardcoded domain: JSON.stringify",
-        "hardcoded domain: cloudflare.request",
-        "hardcoded domain: e.respondWith"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+      "risk_score": 27,
+      "version": "workers-observability@0.6.0"
     }
-  ],
-  "tool_id": "mcp-server-cloudflare",
-  "tool_names": [
-    "execute",
-    "search"
-  ],
-  "vendor": "cloudflare",
-  "version": "workers-observability@0.6.0"
+  ]
 }

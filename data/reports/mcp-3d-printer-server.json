@@ -1,6 +1,18 @@
 {
+  "tool_id": "mcp-3d-printer-server",
+  "version": "1.2.32",
+  "grade": "C",
+  "risk_score": 27,
+  "scan_date": "2026-11-05T04:34:29.925695964Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/DMontgomery40/mcp-3D-printer-server",
   "category": "Developer Tools",
-  "contributors": 9,
+  "vendor": "DMontgomery40",
+  "stars": 258,
+  "npm_package": "mcp-3d-printer-server",
+  "npm_downloads_monthly": 3474,
+  "license": "GPL-2.0",
+  "language": "TypeScript",
   "description": "Connects MCP to major 3D printer APIs (Orca, FULU's Orca/Bambu, OctoPrint, Klipper, Duet, Repetier, Prusa, Creality). Control prints, monitor status, and perform advanced STL operations like scaling, rotation, sectional editing, and base extension. Includes slicing and visualization.",
   "findings": [
     {
@@ -55,7 +67,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "list_printer_files"
     },
@@ -63,7 +75,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "list_printer_files"
     },
@@ -103,7 +115,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "upload_gcode"
     },
@@ -111,7 +123,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "upload_gcode"
     },
@@ -143,7 +155,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "start_print"
     },
@@ -151,7 +163,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "start_print"
     },
@@ -217,7 +229,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "counterpart_printer_info"
+      "tool_name": "camera_stream_start"
     },
     {
       "id": "AS-010",
@@ -225,6 +237,150 @@
       "title": "Insecure Secret Handling",
       "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_stream_start"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_stream_start"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "camera_stream_start"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 12 properties (threshold: 10)",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "camera_frame"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "camera_stream_stop"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_stream_stop"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "camera_stream_stop"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "camera_stream_stop"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "camera_stream_stop"
+    },
+    {
+      "id": "AS-001",
+      "severity": "Critical",
+      "title": "Tool Poisoning (Prompt Injection)",
+      "description": "possible prompt injection detected in tool description: pattern matched: (?i)(developer|unrestricted)\\s+mode",
+      "recommendation": "Remove adversarial instructions from tool descriptions. Validate all tool-definition strings against a safe-pattern allowlist before registration.",
+      "tool_name": "counterpart_print_route"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "counterpart_print_route"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "counterpart_print_route"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "counterpart_print_route"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "counterpart_printer_info"
     },
     {
@@ -232,6 +388,14 @@
       "severity": "Info",
       "title": "Insecure Secret Handling",
       "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
+      "tool_name": "counterpart_printer_info"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "counterpart_printer_info"
     },
@@ -327,7 +491,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get_printer_filaments"
     },
@@ -335,7 +499,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_printer_filaments"
     },
@@ -343,7 +507,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get_printer_filaments"
     },
@@ -407,7 +571,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "resume_print"
     },
@@ -415,7 +579,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "resume_print"
     },
@@ -423,7 +587,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"api_key\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "resume_print"
     },
@@ -527,7 +691,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 34 properties (threshold: 10)",
+      "description": "input schema exposes 40 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "slice_stl"
     },
@@ -551,7 +715,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 34 properties (threshold: 10)",
+      "description": "input schema exposes 40 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "slice_with_template"
     },
@@ -775,6 +939,22 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "inspect_print_file"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "inspect_print_file"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "print_3mf"
@@ -783,7 +963,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 23 properties (threshold: 10)",
+      "description": "input schema exposes 28 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "print_3mf"
     },
@@ -1020,21 +1200,611 @@
       "tool_name": "fusion_mcp_export"
     }
   ],
-  "forks": 50,
-  "grade": "C",
-  "language": "TypeScript",
-  "last_commit_at": "2026-11-02T10:58:32Z",
-  "last_release_at": "2026-11-02T11:04:43Z",
-  "latest_release_name": "v1.2.25",
-  "latest_release_tag": "v1.2.25",
-  "latest_release_url": "https://github.com/DMontgomery40/mcp-3D-printer-server/releases/tag/v1.2.25",
-  "latest_release_version": "v1.2.25",
-  "license": "GPL-2.0",
+  "summary": {
+    "critical": 2,
+    "high": 0,
+    "medium": 1,
+    "low": 25,
+    "info": 120
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 3366,
-  "npm_package": "mcp-3d-printer-server",
-  "risk_score": 25,
-  "scan_date": "2026-11-04T04:14:51.174141306Z",
+  "tool_names": [
+    "blender_mcp_call",
+    "blender_mcp_edit_model",
+    "blender_mcp_export_stl",
+    "blender_mcp_status",
+    "camera_frame",
+    "camera_snapshot",
+    "camera_stream_start",
+    "camera_stream_stop",
+    "cancel_print",
+    "center_model",
+    "check_fulu_orca_setup",
+    "confirm_temperatures",
+    "counterpart_print_progress",
+    "counterpart_print_route",
+    "counterpart_printer_info",
+    "extend_stl_base",
+    "fulu_bambu_network_rpc",
+    "fusion_mcp_call",
+    "fusion_mcp_export",
+    "fusion_mcp_new_design",
+    "fusion_mcp_status",
+    "generate_stl_visualization",
+    "get_printer_filaments",
+    "get_printer_status",
+    "get_slice_settings",
+    "get_stl_info",
+    "inspect_print_file",
+    "lay_flat",
+    "list_printer_files",
+    "list_templates",
+    "merge_vertices",
+    "modify_stl_section",
+    "pause_print",
+    "print_3mf",
+    "process_and_print_stl",
+    "resume_print",
+    "rotate_stl",
+    "save_template",
+    "scale_stl",
+    "set_printer_temperature",
+    "slice_stl",
+    "slice_with_template",
+    "start_print",
+    "translate_stl",
+    "upload_gcode"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "get_printer_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_printer_files",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "upload_gcode",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "start_print",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "cancel_print",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "camera_stream_start",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "camera_frame",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "camera_stream_stop",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "counterpart_print_route",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "counterpart_printer_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "counterpart_print_progress",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)",
+        "hardcoded domain: job.name"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "camera_snapshot",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)",
+        "hardcoded domain: webcam.snapshotUrl"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_printer_filaments",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "pause_print",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "resume_print",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "set_printer_temperature",
+      "action": "ALLOW",
+      "grade": "B",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "extend_stl_base",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "slice_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (uptodate)",
+        "hardcoded domain: filament.json"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "slice_with_template",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (uptodate)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_templates",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "save_template",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_slice_settings",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "confirm_temperatures",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "process_and_print_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "hardcoded domain: filament.json"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_stl_info",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "scale_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (scale_factor)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "rotate_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "translate_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "modify_stl_section",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (custom_max_x)",
+        "dynamic email recipient (custom_max_y)",
+        "dynamic email recipient (custom_max_z)",
+        "dynamic email recipient (custom_min_x)",
+        "dynamic email recipient (custom_min_y)",
+        "dynamic email recipient (custom_min_z)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "generate_stl_visualization",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "inspect_print_file",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "print_3mf",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic URL input (host)",
+        "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "check_fulu_orca_setup",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: Node.js",
+        "hardcoded domain: OrcaSlicer.app",
+        "hardcoded domain: bridge.capabilities",
+        "hardcoded domain: bridge.handshake"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fulu_bambu_network_rpc",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: bridge.handshake"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "merge_vertices",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (tolerance)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "center_model",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "lay_flat",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "blender_mcp_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (tool_names)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "blender_mcp_call",
+      "action": "REQUIRE_APPROVAL",
+      "grade": "C",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "blender_mcp_export_stl",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "blender_mcp_edit_model",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: u003e.stl"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fusion_mcp_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fusion_mcp_call",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
+      ],
+      "destinations": [
+        "dynamic email recipient (tool_name)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fusion_mcp_new_design",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "fusion_mcp_export",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "destinations": [
+        "hardcoded domain: parameters.json",
+        "hardcoded domain: u003e.parameters.json",
+        "hardcoded domain: u003e.stl"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-03-25T05:39:14Z",
@@ -2217,545 +2987,12 @@
       "grade": "C",
       "risk_score": 25,
       "version": "1.2.25"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/DMontgomery40/mcp-3D-printer-server",
-  "stars": 258,
-  "summary": {
-    "critical": 1,
-    "high": 0,
-    "medium": 1,
-    "low": 21,
-    "info": 104
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "get_printer_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "list_printer_files",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "upload_gcode",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "start_print",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "cancel_print",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "counterpart_printer_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "counterpart_print_progress",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)",
-        "hardcoded domain: job.name"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "camera_snapshot",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)",
-        "hardcoded domain: webcam.snapshotUrl"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_printer_filaments",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "pause_print",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "resume_print",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "set_printer_temperature",
-      "action": "ALLOW",
-      "grade": "B",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "extend_stl_base",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "slice_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (uptodate)",
-        "hardcoded domain: filament.json"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "slice_with_template",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (uptodate)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_templates",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "save_template",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_slice_settings",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "confirm_temperatures",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "process_and_print_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "hardcoded domain: filament.json"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_stl_info",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "scale_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (scale_factor)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "rotate_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "translate_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "modify_stl_section",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (custom_max_x)",
-        "dynamic email recipient (custom_max_y)",
-        "dynamic email recipient (custom_max_z)",
-        "dynamic email recipient (custom_min_x)",
-        "dynamic email recipient (custom_min_y)",
-        "dynamic email recipient (custom_min_z)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "generate_stl_visualization",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "print_3mf",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network",
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic URL input (host)",
-        "dynamic email recipient (bambu_token)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "check_fulu_orca_setup",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: Node.js",
-        "hardcoded domain: OrcaSlicer.app",
-        "hardcoded domain: bridge.capabilities",
-        "hardcoded domain: bridge.handshake"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fulu_bambu_network_rpc",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: bridge.handshake"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "merge_vertices",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (tolerance)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "center_model",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "lay_flat",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "blender_mcp_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (tool_names)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "blender_mcp_call",
-      "action": "REQUIRE_APPROVAL",
+      "scan_date": "2026-11-04T04:14:51Z",
       "grade": "C",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (tool_name)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "blender_mcp_export_stl",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "blender_mcp_edit_model",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands",
-        "writes_files"
-      ],
-      "destinations": [
-        "hardcoded domain: u003e.stl"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fusion_mcp_status",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fusion_mcp_call",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "executes_commands"
-      ],
-      "destinations": [
-        "dynamic email recipient (tool_name)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fusion_mcp_new_design",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "fusion_mcp_export",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "destinations": [
-        "hardcoded domain: parameters.json",
-        "hardcoded domain: u003e.parameters.json",
-        "hardcoded domain: u003e.stl"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "risk_score": 25,
+      "version": "1.2.25"
     }
-  ],
-  "tool_id": "mcp-3d-printer-server",
-  "tool_names": [
-    "blender_mcp_call",
-    "blender_mcp_edit_model",
-    "blender_mcp_export_stl",
-    "blender_mcp_status",
-    "camera_snapshot",
-    "cancel_print",
-    "center_model",
-    "check_fulu_orca_setup",
-    "confirm_temperatures",
-    "counterpart_print_progress",
-    "counterpart_printer_info",
-    "extend_stl_base",
-    "fulu_bambu_network_rpc",
-    "fusion_mcp_call",
-    "fusion_mcp_export",
-    "fusion_mcp_new_design",
-    "fusion_mcp_status",
-    "generate_stl_visualization",
-    "get_printer_filaments",
-    "get_printer_status",
-    "get_slice_settings",
-    "get_stl_info",
-    "lay_flat",
-    "list_printer_files",
-    "list_templates",
-    "merge_vertices",
-    "modify_stl_section",
-    "pause_print",
-    "print_3mf",
-    "process_and_print_stl",
-    "resume_print",
-    "rotate_stl",
-    "save_template",
-    "scale_stl",
-    "set_printer_temperature",
-    "slice_stl",
-    "slice_with_template",
-    "start_print",
-    "translate_stl",
-    "upload_gcode"
-  ],
-  "vendor": "DMontgomery40",
-  "version": "1.2.25"
+  ]
 }

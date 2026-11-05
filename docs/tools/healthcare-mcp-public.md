@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 191 |
 | **Language** | JavaScript |
 | **Source** | [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

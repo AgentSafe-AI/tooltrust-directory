@@ -8,7 +8,7 @@
 | **Risk Score** | 42 |
 | **Version** | `1.15.0` |
 | **Vendor** | googleapis |
-| **Stars** | ⭐ 16765 |
+| **Stars** | ⭐ 16804 |
 | **Language** | Go |
 | **Source** | [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) |
 | **Scan Date** | 2026-11-01 |

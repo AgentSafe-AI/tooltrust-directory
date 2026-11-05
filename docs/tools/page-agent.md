@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.12.4` |
 | **Vendor** | alibaba |
-| **Stars** | ⭐ 29627 |
+| **Stars** | ⭐ 29634 |
 | **npm Package** | `root` |
-| **npm Downloads (30d)** | 11.5k |
+| **npm Downloads (30d)** | 11.9k |
 | **Language** | TypeScript |
 | **Source** | [page-agent](https://github.com/alibaba/page-agent) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

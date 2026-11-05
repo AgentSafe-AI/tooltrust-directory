@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.1.0` |
+| **Version** | `2.2.0` |
 | **Vendor** | serpapi |
 | **Stars** | ⭐ 183 |
 | **Language** | Python |
 | **Source** | [serpapi-mcp](https://github.com/serpapi/serpapi-mcp) |
-| **Scan Date** | 2026-11-04 |
+| **Scan Date** | 2026-11-05 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -24,7 +24,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 3 |
-| Info     | 6 |
+| Info     | 7 |
 
 ## Detailed Findings
 
@@ -49,6 +49,18 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

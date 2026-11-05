@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `2.0.0-beta.0` |
 | **Vendor** | delorenj |
-| **Stars** | ⭐ 446 |
+| **Stars** | ⭐ 447 |
 | **npm Package** | `@delorenj/mcp-server-trello` |
 | **npm Downloads (30d)** | 13.4k |
 | **Language** | TypeScript |
