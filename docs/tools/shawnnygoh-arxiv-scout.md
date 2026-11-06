@@ -9,7 +9,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [shawnnygoh-arxiv-scout](https://smithery.ai/server/shawnnygoh/arxiv-scout) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -1,15 +1,15 @@
-# 🟡 alberduris-summiz
+# 🟢 alberduris-summiz
 
 > Find videos and podcasts in the Summiz catalog with concise keyword searches. Skim key insights with Quick Takes, then dive deeper with full summaries and complete transcripts. Create summaries for YouTube videos that aren’t yet covered.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **B** |
-| **Risk Score** | 15 |
+| **Grade** | **A** |
+| **Risk Score** | 2 |
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [alberduris-summiz](https://smithery.ai/server/alberduris/summiz) |
-| **Scan Date** | 2026-10-26 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -19,24 +19,12 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 1 |
+| High     | 0 |
 | Medium   | 0 |
 | Low      | 12 |
 | Info     | 26 |
 
 ## Detailed Findings
-
-### 🟠 `AS-012` — Rug-Pull (Post-Install Description Change)
-
-**Severity:** High
-
-**Description:**
-Tool set changed silently at vsmithery: 6 tool(s) added, 0 tool(s) removed without a version bump.
-
-**Recommendation:**
-The set of tools exposed by this server changed between scans of the same version — a sign the package was silently updated without a version bump. Audit the changelog and all tool definitions before trusting this server. Pin to a specific commit hash rather than a floating version tag.
-
----
 
 ### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 

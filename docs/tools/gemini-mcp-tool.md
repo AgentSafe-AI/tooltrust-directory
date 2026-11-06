@@ -10,10 +10,10 @@
 | **Vendor** | jamubc |
 | **Stars** | ⭐ 2294 |
 | **npm Package** | `gemini-mcp-tool` |
-| **npm Downloads (30d)** | 15.5k |
+| **npm Downloads (30d)** | 15.4k |
 | **Language** | TypeScript |
 | **Source** | [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.9.4` |
 | **Vendor** | oomol-lab |
-| **Stars** | ⭐ 6155 |
+| **Stars** | ⭐ 6190 |
 | **npm Package** | `@oomol-lab/open-connector` |
 | **npm Downloads (30d)** | 3.2k |
 | **Language** | TypeScript |

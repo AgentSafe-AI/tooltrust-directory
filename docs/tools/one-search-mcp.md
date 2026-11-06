@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.2.4` |
 | **Vendor** | yokingma |
-| **Stars** | ⭐ 147 |
+| **Stars** | ⭐ 148 |
 | **npm Package** | `one-search-mcp` |
-| **npm Downloads (30d)** | 845 |
+| **npm Downloads (30d)** | 853 |
 | **Language** | TypeScript |
 | **Source** | [one-search-mcp](https://github.com/yokingma/one-search-mcp) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

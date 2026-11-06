@@ -15,7 +15,7 @@ No black box: you control every prompt, asset, model, and setting.
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [framesail-framesail](https://smithery.ai/server/framesail/framesail) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

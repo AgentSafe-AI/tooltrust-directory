@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `workers-observability@0.6.0` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 4446 |
+| **Stars** | ⭐ 4450 |
 | **npm Package** | `@cloudflare/mcp-server-cloudflare` |
-| **npm Downloads (30d)** | 9.9k |
+| **npm Downloads (30d)** | 9.6k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

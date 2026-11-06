@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `show` |
 | **Vendor** | coddingtonbear |
-| **Stars** | ⭐ 3098 |
+| **Stars** | ⭐ 3117 |
 | **npm Package** | `obsidian-local-rest-api` |
 | **npm Downloads (30d)** | 2.5k |
 | **Language** | TypeScript |

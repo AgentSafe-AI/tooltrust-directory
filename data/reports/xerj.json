@@ -1,14 +1,14 @@
 {
   "tool_id": "xerj",
-  "version": "1.0.0-rc.100",
+  "version": "1.0.0-rc.101",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-05T04:29:26.378516397Z",
+  "scan_date": "2026-11-06T04:27:15.560948126Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/xerj-org/xerj",
   "category": "Other",
   "vendor": "xerj-org",
-  "stars": 19106,
+  "stars": 19077,
   "license": "Apache-2.0",
   "language": "Rust",
   "description": "AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
@@ -74,6 +74,14 @@
       "severity": "Info",
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access, database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "xerj_search"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Low",
+      "title": "Excessive Permission Surface",
+      "description": "input schema exposes 11 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "xerj_search"
     },
@@ -334,6 +342,14 @@
       "tool_name": "xerj_autoindex_remove"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "xerj_status"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -522,8 +538,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 12,
-    "info": 51
+    "low": 13,
+    "info": 52
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -548,6 +564,7 @@
     "xerj_plan",
     "xerj_search",
     "xerj_semantic_search",
+    "xerj_status",
     "xerj_vector_search"
   ],
   "tool_contexts": [
@@ -556,7 +573,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "reads_files"
+        "executes_commands",
+        "writes_files"
       ],
       "destinations": [
         "dynamic email recipient (max_tokens)",
@@ -720,6 +738,13 @@
       "behavior": [
         "writes_files"
       ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
+    },
+    {
+      "tool_name": "xerj_status",
+      "action": "ALLOW",
+      "grade": "A",
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -906,6 +931,12 @@
     },
     {
       "scan_date": "2026-11-04T04:08:00Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "1.0.0-rc.100"
+    },
+    {
+      "scan_date": "2026-11-05T04:29:26Z",
       "grade": "A",
       "risk_score": 4,
       "version": "1.0.0-rc.100"

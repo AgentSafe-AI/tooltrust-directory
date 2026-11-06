@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.20` |
 | **Vendor** | grll |
-| **Stars** | ⭐ 424 |
+| **Stars** | ⭐ 425 |
 | **Language** | Python |
 | **Source** | [mcpadapt](https://github.com/grll/mcpadapt) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

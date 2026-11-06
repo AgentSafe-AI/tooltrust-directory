@@ -10,10 +10,10 @@
 | **Vendor** | yamadashy |
 | **Stars** | ⭐ 29161 |
 | **npm Package** | `repomix` |
-| **npm Downloads (30d)** | 358.3k |
+| **npm Downloads (30d)** | 361.7k |
 | **Language** | TypeScript |
 | **Source** | [repomix](https://github.com/yamadashy/repomix) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-06 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

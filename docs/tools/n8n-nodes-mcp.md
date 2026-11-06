@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.37` |
 | **Vendor** | nerding-io |
-| **Stars** | ⭐ 3039 |
+| **Stars** | ⭐ 3038 |
 | **npm Package** | `n8n-nodes-mcp` |
 | **npm Downloads (30d)** | 310.1k |
 | **Language** | TypeScript |

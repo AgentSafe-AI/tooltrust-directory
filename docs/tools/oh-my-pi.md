@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `18.14.2` |
 | **Vendor** | can1357 |
-| **Stars** | ⭐ 37352 |
+| **Stars** | ⭐ 37970 |
 | **npm Package** | `omp` |
 | **npm Downloads (30d)** | 304 |
 | **Language** | TypeScript |

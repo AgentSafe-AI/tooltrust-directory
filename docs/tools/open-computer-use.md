@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.2` |
 | **Vendor** | iFurySt |
-| **Stars** | ⭐ 2672 |
+| **Stars** | ⭐ 2865 |
 | **npm Package** | `open-computer-use-repo-tools` |
 | **Language** | Swift |
 | **Source** | [open-computer-use](https://github.com/iFurySt/open-computer-use) |

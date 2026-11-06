@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.22` |
 | **Vendor** | every-app |
-| **Stars** | ⭐ 25927 |
+| **Stars** | ⭐ 26548 |
 | **npm Package** | `open-seo` |
 | **Language** | TypeScript |
 | **Source** | [open-seo](https://github.com/every-app/open-seo) |

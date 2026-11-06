@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `2.44.0` |
 | **Vendor** | node9-ai |
-| **Stars** | ⭐ 223 |
+| **Stars** | ⭐ 225 |
 | **npm Package** | `@node9/proxy` |
 | **npm Downloads (30d)** | 7.8k |
 | **Language** | TypeScript |
