@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.1` |
 | **Vendor** | lharries |
-| **Stars** | ⭐ 6816 |
+| **Stars** | ⭐ 6829 |
 | **Language** | Go |
 | **Source** | [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

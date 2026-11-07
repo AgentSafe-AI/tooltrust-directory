@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.2.1` |
 | **Vendor** | open-metadata |
-| **Stars** | ⭐ 15641 |
+| **Stars** | ⭐ 15702 |
 | **npm Package** | `open-metadata` |
 | **Language** | TypeScript |
 | **Source** | [openmetadata](https://github.com/open-metadata/OpenMetadata) |

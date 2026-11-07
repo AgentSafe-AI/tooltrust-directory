@@ -1,16 +1,16 @@
 {
   "tool_id": "bambu-printer-mcp",
-  "version": "1.1.66",
+  "version": "1.1.77",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-11-06T04:33:57.81935535Z",
+  "scan_date": "2026-11-07T04:03:35.139942565Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DMontgomery40/bambu-printer-mcp",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 283,
+  "stars": 285,
   "npm_package": "bambu-printer-mcp",
-  "npm_downloads_monthly": 12259,
+  "npm_downloads_monthly": 14825,
   "license": "GPL-2.0",
   "language": "TypeScript",
   "description": "MCP server for Bambu Lab 3D printers — STL manipulation, BambuStudio  or FULU/orca slicing, Blender MCP integration, and direct printer control",
@@ -110,6 +110,22 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "resolve_3mf_ams_slots"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "list_3mf_plates"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "list_3mf_plates"
     },
     {
       "id": "AS-002",
@@ -419,7 +435,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -427,7 +443,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -1685,7 +1701,7 @@
     "high": 0,
     "medium": 6,
     "low": 42,
-    "info": 158
+    "info": 160
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1724,6 +1740,7 @@
     "inspect_print_file",
     "lay_flat",
     "list_3mf_plate_objects",
+    "list_3mf_plates",
     "list_printer_files",
     "list_templates",
     "merge_vertices",
@@ -1793,6 +1810,16 @@
       "destinations": [
         "dynamic URL input (host)",
         "dynamic email recipient (bambu_token)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_3mf_plates",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -2777,6 +2804,12 @@
       "grade": "C",
       "risk_score": 27,
       "version": "1.1.58"
+    },
+    {
+      "scan_date": "2026-11-06T04:33:57Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.1.66"
     }
   ]
 }

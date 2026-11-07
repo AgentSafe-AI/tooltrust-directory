@@ -10,10 +10,10 @@
 | **Vendor** | spences10 |
 | **Stars** | ⭐ 588 |
 | **npm Package** | `mcp-sequentialthinking-tools` |
-| **npm Downloads (30d)** | 3.1k |
+| **npm Downloads (30d)** | 3.5k |
 | **Language** | TypeScript |
 | **Source** | [mcp-sequentialthinking-tools](https://github.com/spences10/mcp-sequentialthinking-tools) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

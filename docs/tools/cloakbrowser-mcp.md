@@ -10,10 +10,10 @@
 | **Vendor** | swimmwatch |
 | **Stars** | ⭐ 176 |
 | **npm Package** | `cloakbrowser-mcp` |
-| **npm Downloads (30d)** | 2.1k |
+| **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |
 | **Source** | [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

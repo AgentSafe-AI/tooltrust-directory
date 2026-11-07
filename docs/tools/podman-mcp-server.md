@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.0.15` |
 | **Vendor** | manusa |
-| **Stars** | ⭐ 84 |
+| **Stars** | ⭐ 85 |
 | **Language** | Go |
 | **Source** | [podman-mcp-server](https://github.com/manusa/podman-mcp-server) |
 | **Scan Date** | 2026-10-15 |

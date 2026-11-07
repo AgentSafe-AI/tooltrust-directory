@@ -12,7 +12,7 @@
 | **npm Package** | `octocode-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [octocode](https://github.com/bgauryy/octocode) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 31 |
 | **Language** | C# |
 | **Source** | [mcp-unity](https://github.com/CoderGamester/mcp-unity) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

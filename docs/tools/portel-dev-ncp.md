@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.0` |
 | **Vendor** | portel-dev |
-| **Stars** | ⭐ 100 |
+| **Stars** | ⭐ 101 |
 | **npm Package** | `@portel/ncp` |
 | **npm Downloads (30d)** | 2.1k |
 | **Language** | JavaScript |

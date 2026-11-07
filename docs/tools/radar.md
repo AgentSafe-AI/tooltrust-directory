@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.19.0` |
 | **Vendor** | skyhook-io |
-| **Stars** | ⭐ 4000 |
+| **Stars** | ⭐ 4066 |
 | **npm Package** | `radar` |
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | Go |

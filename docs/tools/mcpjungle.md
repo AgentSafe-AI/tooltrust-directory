@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.14` |
 | **Vendor** | mcpjungle |
-| **Stars** | ⭐ 1606 |
+| **Stars** | ⭐ 1611 |
 | **Language** | Go |
 | **Source** | [mcpjungle](https://github.com/mcpjungle/MCPJungle) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

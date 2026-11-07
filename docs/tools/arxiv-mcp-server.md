@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3258 |
 | **Language** | Python |
 | **Source** | [arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

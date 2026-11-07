@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 697 |
 | **Language** | Go |
 | **Source** | [mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

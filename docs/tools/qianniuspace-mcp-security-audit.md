@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.4` |
 | **Vendor** | qianniuspace |
-| **Stars** | ⭐ 57 |
+| **Stars** | ⭐ 58 |
 | **npm Package** | `mcp-security-audit` |
 | **npm Downloads (30d)** | 223 |
 | **Language** | TypeScript |

@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 26015 |
 | **Language** | Go |
 | **Source** | [kratos](https://github.com/go-kratos/kratos) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

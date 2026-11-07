@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.6.0` |
 | **Vendor** | PuroDelphi |
-| **Stars** | ⭐ 69 |
+| **Stars** | ⭐ 71 |
 | **npm Package** | `mcp-firebird` |
 | **npm Downloads (30d)** | 5.5k |
 | **Language** | TypeScript |

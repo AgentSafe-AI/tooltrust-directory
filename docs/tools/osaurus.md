@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `wa-helper-v0.2.3` |
 | **Vendor** | osaurus-ai |
-| **Stars** | ⭐ 8133 |
+| **Stars** | ⭐ 8137 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

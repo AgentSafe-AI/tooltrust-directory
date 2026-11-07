@@ -1,16 +1,16 @@
 {
   "tool_id": "malinoto-tracepass-mcp-server",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-11-06T04:37:04.25283423Z",
+  "scan_date": "2026-11-07T04:06:12.376152736Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/malinoto/tracepass-mcp-server",
   "category": "Developer Tools",
   "vendor": "malinoto",
   "stars": 1,
   "npm_package": "tracepass-mcp-server",
-  "npm_downloads_monthly": 3846,
+  "npm_downloads_monthly": 4203,
   "license": "MIT",
   "language": "TypeScript",
   "description": "Model Context Protocol server for TracePass — the EU Digital Product Passport platform",
@@ -147,7 +147,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: network access, filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "tracepass_passport_lifecycle"
     },
@@ -215,7 +215,7 @@
     },
     {
       "kind": "tool_definition",
-      "line": 95,
+      "line": 103,
       "snippet": ".registerTool(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -334,7 +334,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "uses_network"
+        "uses_network",
+        "writes_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -997,6 +998,12 @@
     },
     {
       "scan_date": "2026-11-05T04:36:30Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.24.0"
+    },
+    {
+      "scan_date": "2026-11-06T04:37:04Z",
       "grade": "A",
       "risk_score": 2,
       "version": "1.24.0"

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `9.8.2` |
 | **Vendor** | BeehiveInnovations |
-| **Stars** | ⭐ 11812 |
+| **Stars** | ⭐ 11827 |
 | **Language** | Python |
 | **Source** | [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) |
 | **Scan Date** | 2026-11-01 |

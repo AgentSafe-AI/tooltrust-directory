@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `1.1.66` |
+| **Version** | `1.1.77` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 283 |
+| **Stars** | ⭐ 285 |
 | **npm Package** | `bambu-printer-mcp` |
-| **npm Downloads (30d)** | 12.3k |
+| **npm Downloads (30d)** | 14.8k |
 | **Language** | TypeScript |
 | **Source** | [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) |
-| **Scan Date** | 2026-11-06 |
+| **Scan Date** | 2026-11-07 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 6 |
 | Low      | 42 |
-| Info     | 158 |
+| Info     | 160 |
 
 ## Detailed Findings
 
@@ -159,6 +159,30 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 
@@ -635,7 +659,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "password" accepts a credential (informational; not evidence of insecure handling)
+input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -647,7 +671,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

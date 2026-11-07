@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `54.0.0-beta.1` |
 | **Vendor** | udecode |
-| **Stars** | ⭐ 16674 |
+| **Stars** | ⭐ 16690 |
 | **npm Package** | `plate` |
 | **npm Downloads (30d)** | 347 |
 | **Language** | TypeScript |
