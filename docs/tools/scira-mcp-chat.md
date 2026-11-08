@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.1.0` |
 | **Vendor** | zaidmukaddam |
-| **Stars** | ⭐ 825 |
+| **Stars** | ⭐ 824 |
 | **npm Package** | `mcp-chat` |
 | **npm Downloads (30d)** | 144 |
 | **Language** | TypeScript |

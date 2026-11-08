@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.1` |
 | **Vendor** | samihalawa |
-| **Stars** | ⭐ 82 |
+| **Stars** | ⭐ 84 |
 | **npm Package** | `visual-ui-debug-agent-mcp` |
 | **npm Downloads (30d)** | 172 |
 | **Language** | JavaScript |

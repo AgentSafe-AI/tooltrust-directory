@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.18.1` |
 | **Vendor** | yamadashy |
-| **Stars** | ⭐ 29174 |
+| **Stars** | ⭐ 29180 |
 | **npm Package** | `repomix` |
 | **npm Downloads (30d)** | 401.3k |
 | **Language** | TypeScript |

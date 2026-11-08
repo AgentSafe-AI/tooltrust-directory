@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.6.2` |
 | **Vendor** | MinishLab |
-| **Stars** | ⭐ 6282 |
+| **Stars** | ⭐ 6378 |
 | **Language** | Python |
 | **Source** | [semble](https://github.com/MinishLab/semble) |
 | **Scan Date** | 2026-10-16 |

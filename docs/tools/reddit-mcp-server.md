@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.4.8` |
 | **Vendor** | jordanburke |
-| **Stars** | ⭐ 301 |
+| **Stars** | ⭐ 323 |
 | **npm Package** | `reddit-mcp-server` |
 | **npm Downloads (30d)** | 6.2k |
 | **Language** | TypeScript |

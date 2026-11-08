@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.8.7` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 7423 |
+| **Stars** | ⭐ 7452 |
 | **Language** | Go |
 | **Source** | [registry](https://github.com/modelcontextprotocol/registry) |
 | **Scan Date** | 2026-11-01 |

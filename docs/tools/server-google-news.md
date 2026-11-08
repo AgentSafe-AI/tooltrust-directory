@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.1` |
 | **Vendor** | ChanMeng666 |
-| **Stars** | ⭐ 129 |
+| **Stars** | ⭐ 131 |
 | **npm Package** | `@chanmeng666/google-news-server` |
 | **npm Downloads (30d)** | 226 |
 | **Language** | TypeScript |
