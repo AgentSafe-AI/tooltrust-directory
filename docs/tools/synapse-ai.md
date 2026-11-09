@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.9.3` |
 | **Vendor** | synapseorch-ai |
-| **Stars** | ⭐ 337 |
+| **Stars** | ⭐ 338 |
 | **npm Package** | `synapse-orch-ai` |
 | **npm Downloads (30d)** | 635 |
 | **Language** | Python |

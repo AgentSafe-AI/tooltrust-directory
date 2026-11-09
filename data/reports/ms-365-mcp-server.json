@@ -1,16 +1,16 @@
 {
   "tool_id": "ms-365-mcp-server",
-  "version": "0.180.1",
+  "version": "0.181.0",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-08T03:41:28.75832154Z",
+  "scan_date": "2026-11-09T03:59:28.89261316Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/Softeria/ms-365-mcp-server",
   "category": "Developer Tools",
   "vendor": "Softeria",
-  "stars": 1119,
+  "stars": 1122,
   "npm_package": "@softeria/ms-365-mcp-server",
-  "npm_downloads_monthly": 250606,
+  "npm_downloads_monthly": 242233,
   "license": "MIT",
   "language": "TypeScript",
   "description": "A Model Context Protocol (MCP) server for interacting with Microsoft 365 and Microsoft Office services through the Graph API",
@@ -339,8 +339,16 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 14 properties (threshold: 10)",
+      "description": "input schema exposes 15 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "get-drive-delta"
+    },
+    {
+      "id": "AS-010",
+      "severity": "Info",
+      "title": "Insecure Secret Handling",
+      "description": "input parameter \"token\" accepts a credential (informational; not evidence of insecure handling)",
+      "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "get-drive-delta"
     },
     {
@@ -3269,7 +3277,7 @@
       "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "delete-mail-message"
+      "tool_name": "delete-mail-message-skip-deleted-items"
     },
     {
       "id": "AS-011",
@@ -3277,7 +3285,7 @@
       "title": "DoS Resilience — Missing Rate Limit / Timeout",
       "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
       "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
-      "tool_name": "delete-mail-message"
+      "tool_name": "delete-mail-message-skip-deleted-items"
     },
     {
       "id": "AS-014",
@@ -3285,7 +3293,7 @@
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
-      "tool_name": "delete-mail-message"
+      "tool_name": "delete-mail-message-skip-deleted-items"
     },
     {
       "id": "AS-002",
@@ -5371,6 +5379,30 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access, HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "delete-mail-message"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "delete-mail-message"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "delete-mail-message"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access, filesystem access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "get-upload-url"
@@ -5508,8 +5540,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 237,
-    "info": 449
+    "low": 238,
+    "info": 452
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "has_embedded_mcp": true,
@@ -5523,7 +5555,7 @@
     },
     {
       "kind": "init",
-      "line": 350,
+      "line": 369,
       "snippet": "new McpServer(",
       "file": "src/server.ts",
       "language": "typescript"
@@ -5587,6 +5619,7 @@
     "delete-mail-attachment",
     "delete-mail-folder",
     "delete-mail-message",
+    "delete-mail-message-skip-deleted-items",
     "delete-mail-rule",
     "delete-my-calendar-permission",
     "delete-onedrive-file",
@@ -5934,6 +5967,7 @@
       ],
       "destinations": [
         "dynamic email recipient (skiptoken)",
+        "dynamic email recipient (token)",
         "dynamic email recipient (top)",
         "hardcoded domain: odata.count",
         "hardcoded domain: odata.deltaLink",
@@ -7269,7 +7303,7 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "delete-mail-message",
+      "tool_name": "delete-mail-message-skip-deleted-items",
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
@@ -8321,6 +8355,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "delete-mail-message",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network",
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "get-upload-url",
       "action": "ALLOW",
       "grade": "A",
@@ -8370,6 +8415,10 @@
         "reads_files",
         "uses_network"
       ],
+      "destinations": [
+        "dynamic email recipient (accept)",
+        "hardcoded domain: vnd.microsoft.graph.transcript"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
@@ -8382,7 +8431,9 @@
         "writes_files"
       ],
       "destinations": [
-        "hardcoded domain: invoice.pdf"
+        "dynamic email recipient (accept)",
+        "hardcoded domain: invoice.pdf",
+        "hardcoded domain: vnd.microsoft.graph.transcript"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -8429,6 +8480,12 @@
       "grade": "A",
       "risk_score": 4,
       "version": "0.179.1"
+    },
+    {
+      "scan_date": "2026-11-08T03:41:28Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.180.1"
     }
   ]
 }

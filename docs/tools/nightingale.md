@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `9.3.0` |
 | **Vendor** | ccfos |
-| **Stars** | ⭐ 13465 |
+| **Stars** | ⭐ 13468 |
 | **Language** | Go |
 | **Source** | [nightingale](https://github.com/ccfos/nightingale) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

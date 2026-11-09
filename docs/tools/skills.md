@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `skills-v0.60.1` |
 | **Vendor** | scenario-labs |
-| **Stars** | ⭐ 1387 |
+| **Stars** | ⭐ 3554 |
 | **npm Package** | `@scenario-labs/skills` |
 | **Language** | Python |
 | **Source** | [skills](https://github.com/scenario-labs/skills) |

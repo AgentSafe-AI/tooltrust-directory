@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.28` |
 | **Vendor** | Pimzino |
-| **Stars** | ⭐ 4307 |
+| **Stars** | ⭐ 4306 |
 | **npm Package** | `@pimzino/spec-workflow-mcp` |
 | **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |

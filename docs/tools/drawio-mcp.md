@@ -9,7 +9,7 @@
 | **Stars** | ⭐ 5793 |
 | **Language** | JavaScript |
 | **Source** | [drawio-mcp](https://github.com/jgraph/drawio-mcp) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

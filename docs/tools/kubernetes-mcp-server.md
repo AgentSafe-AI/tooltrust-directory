@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.2` |
 | **Vendor** | containers |
-| **Stars** | ⭐ 2229 |
+| **Stars** | ⭐ 2232 |
 | **Language** | Go |
 | **Source** | [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `1.10.0` |
 | **Vendor** | classfang |
-| **Stars** | ⭐ 1026 |
+| **Stars** | ⭐ 1029 |
 | **npm Package** | `@fangjunjie/ssh-mcp-server` |
-| **npm Downloads (30d)** | 11.3k |
+| **npm Downloads (30d)** | 11.4k |
 | **Language** | JavaScript |
 | **Source** | [ssh-mcp-server](https://github.com/classfang/ssh-mcp-server) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

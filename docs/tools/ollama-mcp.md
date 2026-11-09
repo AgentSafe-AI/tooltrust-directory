@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | rawveg |
-| **Stars** | ⭐ 176 |
+| **Stars** | ⭐ 177 |
 | **npm Package** | `ollama-mcp` |
 | **npm Downloads (30d)** | 3.3k |
 | **Language** | TypeScript |
 | **Source** | [ollama-mcp](https://github.com/rawveg/ollama-mcp) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

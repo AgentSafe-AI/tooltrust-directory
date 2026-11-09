@@ -10,10 +10,10 @@
 | **Vendor** | alibaba |
 | **Stars** | ⭐ 29649 |
 | **npm Package** | `root` |
-| **npm Downloads (30d)** | 14.5k |
+| **npm Downloads (30d)** | 14.1k |
 | **Language** | TypeScript |
 | **Source** | [page-agent](https://github.com/alibaba/page-agent) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

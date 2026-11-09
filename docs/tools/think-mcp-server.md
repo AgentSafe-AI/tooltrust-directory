@@ -6,7 +6,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.0` |
 | **Vendor** | PhillipRt |
-| **Stars** | ⭐ 126 |
+| **Stars** | ⭐ 125 |
 | **npm Package** | `think-mcp-server` |
 | **npm Downloads (30d)** | 177 |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0.0` |
 | **Vendor** | quboqin |
-| **Stars** | ⭐ 82 |
+| **Stars** | ⭐ 83 |
 | **Language** | Shell |
 | **Source** | [template-agenticide-vibecoding](https://github.com/quboqin/template-agenticide-vibecoding) |
 | **Scan Date** | 2026-11-01 |

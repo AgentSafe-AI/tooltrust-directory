@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.0` |
 | **Vendor** | grafana |
-| **Stars** | ⭐ 3647 |
+| **Stars** | ⭐ 3651 |
 | **Language** | Go |
 | **Source** | [mcp-grafana](https://github.com/grafana/mcp-grafana) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

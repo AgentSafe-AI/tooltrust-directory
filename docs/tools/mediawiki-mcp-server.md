@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 7.5k |
 | **Language** | TypeScript |
 | **Source** | [mediawiki-mcp-server](https://github.com/ProfessionalWiki/MediaWiki-MCP-Server) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

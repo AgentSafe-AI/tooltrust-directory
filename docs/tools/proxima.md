@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `5.5.0` |
 | **Vendor** | Zen4-bit |
-| **Stars** | ⭐ 1204 |
+| **Stars** | ⭐ 1207 |
 | **npm Package** | `proxima` |
-| **npm Downloads (30d)** | 177 |
+| **npm Downloads (30d)** | 166 |
 | **Language** | JavaScript |
 | **Source** | [proxima](https://github.com/Zen4-bit/Proxima) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-09 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
