@@ -1,6 +1,6 @@
 # 🟢 vestige
 
-> Think before doing, prove before saving. Vestige is the local-first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory, cryptographic Merkle-chained state ledgers, and out-of-band kernel gates bringing frontier PhD reasoning to local silicon with zero cloud token tax.
+> Local first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory and proof engine STRATA, 114 operator gates bringing frontier PhD reasoning to local silicon with zero cloud token tax.
 
 | Field | Value |
 |-------|-------|
@@ -10,10 +10,10 @@
 | **Vendor** | samvallad33 |
 | **Stars** | ⭐ 660 |
 | **npm Package** | `vestige` |
-| **npm Downloads (30d)** | 18 |
+| **npm Downloads (30d)** | 21 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-11-09 |
+| **Scan Date** | 2026-11-10 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

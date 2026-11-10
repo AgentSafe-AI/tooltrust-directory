@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.1.0` |
 | **Vendor** | liketrek |
-| **Stars** | ⭐ 15279 |
+| **Stars** | ⭐ 15471 |
 | **npm Package** | `@trek/root` |
 | **Language** | TypeScript |
 | **Source** | [trek](https://github.com/liketrek/TREK) |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.5.2` |
 | **Vendor** | 78 |
-| **Stars** | ⭐ 32356 |
+| **Stars** | ⭐ 32966 |
 | **Language** | C++ |
 | **Source** | [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) |
 | **Scan Date** | 2026-11-01 |

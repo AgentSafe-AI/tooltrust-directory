@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.25.14` |
 | **Vendor** | txn2 |
-| **Stars** | ⭐ 4177 |
+| **Stars** | ⭐ 4182 |
 | **Language** | Go |
 | **Source** | [txn2-kubefwd](https://github.com/txn2/kubefwd) |
 | **Scan Date** | 2026-10-15 |

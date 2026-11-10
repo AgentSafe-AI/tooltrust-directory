@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.7.6` |
 | **Vendor** | PV-Bhat |
-| **Stars** | ⭐ 503 |
+| **Stars** | ⭐ 505 |
 | **npm Package** | `@pv-bhat/vibe-check-mcp` |
 | **npm Downloads (30d)** | 335 |
 | **Language** | TypeScript |

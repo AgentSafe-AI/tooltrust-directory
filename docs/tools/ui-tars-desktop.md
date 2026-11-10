@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.1` |
 | **Vendor** | bytedance |
-| **Stars** | ⭐ 39581 |
+| **Stars** | ⭐ 39590 |
 | **npm Package** | `monorepo` |
 | **npm Downloads (30d)** | 700 |
 | **Language** | TypeScript |

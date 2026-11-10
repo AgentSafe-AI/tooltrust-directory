@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `1.15.1` |
 | **Vendor** | swimmwatch |
-| **Stars** | ⭐ 177 |
+| **Stars** | ⭐ 178 |
 | **npm Package** | `cloakbrowser-mcp` |
 | **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |
 | **Source** | [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) |
-| **Scan Date** | 2026-11-08 |
+| **Scan Date** | 2026-11-10 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

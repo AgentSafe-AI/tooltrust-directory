@@ -1,17 +1,72 @@
 {
-  "tool_id": "tunnel-client",
-  "version": "0.0.20",
-  "grade": "I",
-  "risk_score": 0,
-  "scan_date": "2026-11-09T03:59:48Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/openai/tunnel-client",
   "category": "Developer Tools",
-  "vendor": "openai",
-  "stars": 624,
-  "license": "Apache-2.0",
-  "language": "Go",
+  "contributors": 2,
   "description": "Customer-run client for Secure MCP Tunnel: connect private or localhost MCP servers to ChatGPT, Codex, the Responses API, and AgentKit without exposing them to the public internet.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 17,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "cmd/client/dev_mcp_stub.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 162,
+      "snippet": "mcp.NewServer(",
+      "file": "cmd/client/dev_mcp_stub.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 166,
+      "snippet": "AddTool(",
+      "file": "cmd/client/dev_mcp_stub.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 24,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "pkg/runtimeharpoon/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 296,
+      "snippet": "mcp.NewServer(",
+      "file": "pkg/runtimeharpoon/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 303,
+      "snippet": "AddTool(",
+      "file": "pkg/runtimeharpoon/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 27,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 683,
+      "snippet": "mcp.NewServer(",
+      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 691,
+      "snippet": "AddTool(",
+      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
+      "language": "go"
+    }
+  ],
   "findings": [
     {
       "id": "AS-018",
@@ -88,6 +143,24 @@
       }
     }
   ],
+  "forks": 139,
+  "grade": "I",
+  "has_embedded_mcp": true,
+  "language": "Go",
+  "last_commit_at": "2026-11-09T18:22:31Z",
+  "last_release_at": "2026-11-06T22:05:17Z",
+  "latest_release_name": "v0.0.20",
+  "latest_release_tag": "v0.0.20",
+  "latest_release_url": "https://github.com/openai/tunnel-client/releases/tag/v0.0.20",
+  "latest_release_version": "v0.0.20",
+  "license": "Apache-2.0",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "risk_score": 0,
+  "scan_date": "2026-11-10T05:34:13Z",
+  "scan_incomplete": true,
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/openai/tunnel-client",
+  "stars": 627,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -95,72 +168,7 @@
     "low": 0,
     "info": 1
   },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "scan_incomplete": true,
-  "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 17,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "cmd/client/dev_mcp_stub.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 162,
-      "snippet": "mcp.NewServer(",
-      "file": "cmd/client/dev_mcp_stub.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 166,
-      "snippet": "AddTool(",
-      "file": "cmd/client/dev_mcp_stub.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 24,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/runtimeharpoon/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 296,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/runtimeharpoon/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 303,
-      "snippet": "AddTool(",
-      "file": "pkg/runtimeharpoon/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "import",
-      "line": 27,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 683,
-      "snippet": "mcp.NewServer(",
-      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
-      "language": "go"
-    },
-    {
-      "kind": "tool_definition",
-      "line": 691,
-      "snippet": "AddTool(",
-      "file": "testsupport/mockmcpserver/mock_mcp_server.go",
-      "language": "go"
-    }
-  ]
+  "tool_id": "tunnel-client",
+  "vendor": "openai",
+  "version": "0.0.20"
 }
