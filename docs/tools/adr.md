@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2129 |
 | **Language** | Python |
 | **Source** | [adr](https://github.com/uber/ADR) |
-| **Scan Date** | 2026-11-10 |
+| **Scan Date** | 2026-11-11 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

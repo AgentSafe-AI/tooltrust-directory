@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.0` |
 | **Vendor** | Panniantong |
-| **Stars** | ⭐ 107261 |
+| **Stars** | ⭐ 110945 |
 | **Language** | Python |
 | **Source** | [agent-reach](https://github.com/Panniantong/Agent-Reach) |
 | **Scan Date** | 2026-11-01 |

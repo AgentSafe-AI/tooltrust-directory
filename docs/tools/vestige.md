@@ -1,6 +1,6 @@
 # 🟢 vestige
 
-> Local first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory and proof engine STRATA, 114 operator gates bringing frontier PhD reasoning to local silicon with zero cloud token tax.
+> Deterministic Operating System and Causal Nervous System for Artificial Intelligence.
 
 | Field | Value |
 |-------|-------|
@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 21 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-11-10 |
+| **Scan Date** | 2026-11-11 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

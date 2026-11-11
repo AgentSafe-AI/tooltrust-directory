@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `2.0.1` |
+| **Version** | `2.1.0` |
 | **Vendor** | wzyn20051216 |
-| **Stars** | ⭐ 1911 |
+| **Stars** | ⭐ 1938 |
 | **npm Package** | `solidworks-automation-skill` |
 | **Language** | Python |
 | **Source** | [solidworks-automation-skill](https://github.com/wzyn20051216/solidworks-automation-skill) |
-| **Scan Date** | 2026-11-10 |
+| **Scan Date** | 2026-11-11 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

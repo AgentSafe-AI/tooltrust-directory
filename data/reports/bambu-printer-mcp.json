@@ -1,16 +1,16 @@
 {
   "tool_id": "bambu-printer-mcp",
-  "version": "1.1.79",
+  "version": "1.1.85",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-11-10T05:35:06.980682834Z",
+  "scan_date": "2026-11-11T04:06:08.97780742Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DMontgomery40/bambu-printer-mcp",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 300,
+  "stars": 302,
   "npm_package": "bambu-printer-mcp",
-  "npm_downloads_monthly": 20578,
+  "npm_downloads_monthly": 20651,
   "license": "GPL-2.0",
   "language": "TypeScript",
   "description": "MCP server for Bambu Lab 3D printers — STL manipulation, BambuStudio  or FULU/orca slicing, Blender MCP integration, and direct printer control",
@@ -435,7 +435,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -443,7 +443,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -1352,6 +1352,62 @@
       "tool_name": "lay_flat"
     },
     {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cad_status"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "cad_setup"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "cad_setup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cad_setup"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: code/command execution, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "cad_run"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cad_run"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "cad_check_fit"
+    },
+    {
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
@@ -1700,8 +1756,8 @@
     "critical": 2,
     "high": 0,
     "medium": 6,
-    "low": 42,
-    "info": 160
+    "low": 43,
+    "info": 166
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1712,6 +1768,10 @@
     "blender_mcp_edit_model",
     "blender_mcp_setup",
     "blender_mcp_status",
+    "cad_check_fit",
+    "cad_run",
+    "cad_setup",
+    "cad_status",
     "camera_frame",
     "camera_snapshot",
     "camera_stream_start",
@@ -2380,6 +2440,46 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "cad_status",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "cad_setup",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "cad_run",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands",
+        "writes_files"
+      ],
+      "destinations": [
+        "hardcoded domain: cad-result.json",
+        "hardcoded domain: parameters.json",
+        "hardcoded domain: trimesh.Trimesh"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "cad_check_fit",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "blender_mcp_status",
       "action": "ALLOW",
       "grade": "A",
@@ -2825,6 +2925,12 @@
     },
     {
       "scan_date": "2026-11-09T04:00:51Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.1.79"
+    },
+    {
+      "scan_date": "2026-11-10T05:35:06Z",
       "grade": "C",
       "risk_score": 27,
       "version": "1.1.79"

@@ -8,7 +8,7 @@
 | **Risk Score** | 10 |
 | **Version** | `0.2.0` |
 | **Vendor** | KeyID-AI |
-| **Stars** | ⭐ 660 |
+| **Stars** | ⭐ 661 |
 | **npm Package** | `@keyid/agent-kit` |
 | **npm Downloads (30d)** | 251 |
 | **Language** | JavaScript |

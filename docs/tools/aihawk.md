@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.69.1` |
 | **Vendor** | feder-cr |
-| **Stars** | ⭐ 32260 |
+| **Stars** | ⭐ 32457 |
 | **npm Package** | `invisible-dots-monorepo` |
 | **Language** | Python |
 | **Source** | [aihawk](https://github.com/feder-cr/AIHawk) |
