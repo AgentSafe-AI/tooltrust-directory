@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 21 |
 | **Language** | Rust |
 | **Source** | [vestige](https://github.com/samvallad33/vestige) |
-| **Scan Date** | 2026-11-11 |
+| **Scan Date** | 2026-11-12 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -1,6 +1,6 @@
 # 🟢 n8n-mcp
 
-> A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you 
+> MCP server that lets Claude, ChatGPT, Cursor and other AI assistants operate n8n: debug, edit, validate, test and build workflows on any n8n instance
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.102.0` |
 | **Vendor** | czlonkowski |
-| **Stars** | ⭐ 23240 |
+| **Stars** | ⭐ 23247 |
 | **npm Package** | `n8n-mcp` |
-| **npm Downloads (30d)** | 291.3k |
+| **npm Downloads (30d)** | 293.9k |
 | **Language** | TypeScript |
 | **Source** | [n8n-mcp](https://github.com/czlonkowski/n8n-mcp) |
-| **Scan Date** | 2026-11-11 |
+| **Scan Date** | 2026-11-12 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

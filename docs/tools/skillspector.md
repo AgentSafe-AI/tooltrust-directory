@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `2.13.4` |
 | **Vendor** | NVIDIA |
-| **Stars** | ⭐ 25244 |
+| **Stars** | ⭐ 25502 |
 | **npm Package** | `skillspector-pi` |
 | **Language** | Python |
 | **Source** | [skillspector](https://github.com/NVIDIA/SkillSpector) |
-| **Scan Date** | 2026-11-11 |
+| **Scan Date** | 2026-11-12 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

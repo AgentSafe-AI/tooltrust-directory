@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.10.4` |
 | **Vendor** | laravel |
-| **Stars** | ⭐ 3673 |
+| **Stars** | ⭐ 3688 |
 | **Language** | PHP |
 | **Source** | [boost](https://github.com/laravel/boost) |
 | **Scan Date** | 2026-11-01 |

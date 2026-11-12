@@ -16,7 +16,7 @@ Enables AI to:
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [bouch-pinescript](https://smithery.ai/server/bouch/pinescript) |
-| **Scan Date** | 2026-11-11 |
+| **Scan Date** | 2026-11-12 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

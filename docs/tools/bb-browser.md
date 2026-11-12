@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.14.0` |
 | **Vendor** | epiral |
-| **Stars** | ⭐ 6257 |
+| **Stars** | ⭐ 6264 |
 | **npm Package** | `bb-browser` |
 | **npm Downloads (30d)** | 1.6k |
 | **Language** | TypeScript |

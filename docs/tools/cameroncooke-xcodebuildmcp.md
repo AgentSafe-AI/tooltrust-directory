@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.3.2` |
 | **Vendor** | cameroncooke |
-| **Stars** | ⭐ 6511 |
+| **Stars** | ⭐ 6565 |
 | **npm Package** | `xcodebuildmcp` |
 | **npm Downloads (30d)** | 271.1k |
 | **Language** | TypeScript |

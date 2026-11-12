@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `mcp-v0.14.9` |
 | **Vendor** | JSONbored |
-| **Stars** | ⭐ 305 |
+| **Stars** | ⭐ 309 |
 | **npm Package** | `heyclaude` |
 | **npm Downloads (30d)** | 13 |
 | **Language** | MDX |
