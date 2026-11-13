@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 509 |
 | **Language** | TypeScript |
 | **Source** | [lunar](https://github.com/TheLunarCompany/lunar) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

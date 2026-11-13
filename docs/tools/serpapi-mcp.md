@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2.2.0` |
+| **Version** | `2.3.0` |
 | **Vendor** | serpapi |
 | **Stars** | ⭐ 184 |
 | **Language** | Python |
 | **Source** | [serpapi-mcp](https://github.com/serpapi/serpapi-mcp) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

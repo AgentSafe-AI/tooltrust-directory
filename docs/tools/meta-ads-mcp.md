@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 1367 |
 | **Language** | Python |
 | **Source** | [meta-ads-mcp](https://github.com/pipeboard-co/meta-ads-mcp) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

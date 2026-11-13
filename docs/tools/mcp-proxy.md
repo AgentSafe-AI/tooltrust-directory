@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.0` |
 | **Vendor** | tbxark |
-| **Stars** | ⭐ 744 |
+| **Stars** | ⭐ 745 |
 | **Language** | Go |
 | **Source** | [mcp-proxy](https://github.com/tbxark/mcp-proxy) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

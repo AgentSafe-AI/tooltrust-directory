@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `4.0.23` |
 | **Vendor** | farion1231 |
-| **Stars** | ⭐ 150670 |
+| **Stars** | ⭐ 154022 |
 | **npm Package** | `cc-switch` |
 | **Language** | Rust |
 | **Source** | [cc-switch](https://github.com/farion1231/cc-switch) |

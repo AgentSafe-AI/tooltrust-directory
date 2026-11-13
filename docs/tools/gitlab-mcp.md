@@ -1,19 +1,19 @@
 # 🟢 gitlab-mcp
 
-> MCP server for GitLab: 277 tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API
+> MCP server for GitLab: 288 tools for projects, MRs, issues, pipelines, wikis and more via the GitLab REST/GraphQL API
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `2.3.25` |
+| **Version** | `2.3.26` |
 | **Vendor** | zereight |
-| **Stars** | ⭐ 2101 |
+| **Stars** | ⭐ 2102 |
 | **npm Package** | `@zereight/mcp-gitlab` |
-| **npm Downloads (30d)** | 757.6k |
+| **npm Downloads (30d)** | 772.0k |
 | **Language** | TypeScript |
 | **Source** | [gitlab-mcp](https://github.com/zereight/gitlab-mcp) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

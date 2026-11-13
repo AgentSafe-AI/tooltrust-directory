@@ -13,7 +13,7 @@
 | **npm Downloads (30d)** | 2.2k |
 | **Language** | TypeScript |
 | **Source** | [cloakbrowser-mcp](https://github.com/swimmwatch/cloakbrowser-mcp) |
-| **Scan Date** | 2026-11-10 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

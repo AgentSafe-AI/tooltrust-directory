@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.0.0-next.21` |
 | **Vendor** | mksglu |
-| **Stars** | ⭐ 33050 |
+| **Stars** | ⭐ 34005 |
 | **npm Package** | `context-mode` |
 | **npm Downloads (30d)** | 92.6k |
 | **Language** | TypeScript |

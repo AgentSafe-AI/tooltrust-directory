@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.5` |
 | **Vendor** | grab |
-| **Stars** | ⭐ 7104 |
+| **Stars** | ⭐ 7105 |
 | **npm Package** | `cursor-talk-to-figma-mcp` |
-| **npm Downloads (30d)** | 4.6k |
+| **npm Downloads (30d)** | 4.7k |
 | **Language** | JavaScript |
 | **Source** | [cursor-talk-to-figma-mcp](https://github.com/grab/cursor-talk-to-figma-mcp) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

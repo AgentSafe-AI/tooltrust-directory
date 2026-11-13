@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.153.0` |
+| **Version** | `0.155.0` |
 | **Vendor** | thClaws |
 | **Stars** | ⭐ 1257 |
 | **Language** | Rust |
 | **Source** | [thclaws](https://github.com/thClaws/thClaws) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

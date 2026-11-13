@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.3.1` |
 | **Vendor** | KnockOutEZ |
-| **Stars** | ⭐ 5535 |
+| **Stars** | ⭐ 5539 |
 | **npm Package** | `wigolo` |
-| **npm Downloads (30d)** | 5.5k |
+| **npm Downloads (30d)** | 7.2k |
 | **Language** | TypeScript |
 | **Source** | [wigolo](https://github.com/KnockOutEZ/wigolo) |
-| **Scan Date** | 2026-11-05 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.3.2` |
 | **Vendor** | cloudflare |
-| **Stars** | ⭐ 278 |
+| **Stars** | ⭐ 279 |
 | **npm Package** | `@cloudflare/containers` |
 | **npm Downloads (30d)** | 6.6M |
 | **Language** | TypeScript |

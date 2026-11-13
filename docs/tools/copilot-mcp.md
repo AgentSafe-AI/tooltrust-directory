@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.0.97` |
 | **Vendor** | VikashLoomba |
-| **Stars** | ⭐ 507 |
+| **Stars** | ⭐ 508 |
 | **npm Package** | `copilot-mcp` |
 | **Language** | TypeScript |
 | **Source** | [copilot-mcp](https://github.com/VikashLoomba/copilot-mcp) |

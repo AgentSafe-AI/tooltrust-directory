@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4` |
 | **Vendor** | alexander-zuev |
-| **Stars** | ⭐ 836 |
+| **Stars** | ⭐ 837 |
 | **Language** | Python |
 | **Source** | [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) |
-| **Scan Date** | 2026-11-12 |
+| **Scan Date** | 2026-11-13 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

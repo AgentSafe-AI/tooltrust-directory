@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.3.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 4611 |
+| **Stars** | ⭐ 4628 |
 | **Language** | C# |
 | **Source** | [csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) |
 | **Scan Date** | 2026-11-01 |

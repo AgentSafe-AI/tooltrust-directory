@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | cantian-ai |
-| **Stars** | ⭐ 436 |
+| **Stars** | ⭐ 437 |
 | **npm Package** | `bazi-mcp` |
 | **npm Downloads (30d)** | 1.6k |
 | **Language** | TypeScript |

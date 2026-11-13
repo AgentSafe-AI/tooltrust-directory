@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.9.0` |
 | **Vendor** | opensumi |
-| **Stars** | ⭐ 3661 |
+| **Stars** | ⭐ 3665 |
 | **npm Package** | `@opensumi/core` |
 | **Language** | TypeScript |
 | **Source** | [core](https://github.com/opensumi/core) |
