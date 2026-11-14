@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `13.3.2` |
 | **Vendor** | Manavarya09 |
-| **Stars** | ⭐ 4440 |
+| **Stars** | ⭐ 5081 |
 | **npm Package** | `designlang` |
 | **npm Downloads (30d)** | 4.6k |
 | **Language** | HTML |

@@ -6,10 +6,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.6` |
 | **Vendor** | elastic |
-| **Stars** | ⭐ 732 |
+| **Stars** | ⭐ 733 |
 | **Language** | Rust |
 | **Source** | [mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch) |
-| **Scan Date** | 2026-11-13 |
+| **Scan Date** | 2026-11-14 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

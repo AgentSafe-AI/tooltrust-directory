@@ -8,11 +8,12 @@
 | **Risk Score** | 17 |
 | **Version** | `0.20.0` |
 | **Vendor** | signal8ai |
-| **Stars** | ⭐ 275 |
+| **Stars** | ⭐ 425 |
 | **npm Package** | `@signal8ai/mcp` |
+| **npm Downloads (30d)** | 873 |
 | **Language** | TypeScript |
 | **Source** | [signal8-mcp](https://github.com/signal8ai/signal8-mcp) |
-| **Scan Date** | 2026-11-13 |
+| **Scan Date** | 2026-11-14 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

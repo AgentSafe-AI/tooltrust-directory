@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.18.1` |
 | **Vendor** | step-security |
-| **Stars** | ⭐ 196 |
+| **Stars** | ⭐ 197 |
 | **Language** | Go |
 | **Source** | [dev-machine-guard](https://github.com/step-security/dev-machine-guard) |
 | **Scan Date** | 2026-11-01 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `3.9.0-p1` |
 | **Vendor** | budtmo |
-| **Stars** | ⭐ 16073 |
+| **Stars** | ⭐ 16128 |
 | **Language** | Python |
 | **Source** | [docker-android](https://github.com/budtmo/docker-android) |
 | **Scan Date** | 2026-11-01 |

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.11.0` |
 | **Vendor** | u14app |
-| **Stars** | ⭐ 4687 |
+| **Stars** | ⭐ 4686 |
 | **npm Package** | `deep-research` |
 | **npm Downloads (30d)** | 35 |
 | **Language** | JavaScript |

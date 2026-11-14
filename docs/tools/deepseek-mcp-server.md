@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.5.0` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 359 |
+| **Stars** | ⭐ 366 |
 | **npm Package** | `deepseek-mcp-server` |
 | **npm Downloads (30d)** | 2.6k |
 | **Language** | TypeScript |
