@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.52.3` |
 | **Vendor** | Erudika |
-| **Stars** | ⭐ 574 |
+| **Stars** | ⭐ 576 |
 | **Language** | Java |
 | **Source** | [erudika-para](https://github.com/Erudika/para) |
 | **Scan Date** | 2026-10-15 |

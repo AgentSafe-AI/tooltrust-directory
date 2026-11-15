@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.4.1` |
 | **Vendor** | muthuishere |
-| **Stars** | ⭐ 515 |
+| **Stars** | ⭐ 516 |
 | **Language** | Shell |
 | **Source** | [mcp-server-bash-sdk](https://github.com/muthuishere/mcp-server-bash-sdk) |
-| **Scan Date** | 2026-11-14 |
+| **Scan Date** | 2026-11-15 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

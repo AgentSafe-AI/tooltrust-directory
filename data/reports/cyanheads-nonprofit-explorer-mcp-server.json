@@ -1,6 +1,18 @@
 {
+  "tool_id": "cyanheads-nonprofit-explorer-mcp-server",
+  "version": "0.3.0",
+  "grade": "A",
+  "risk_score": 2,
+  "scan_date": "2026-11-15T04:11:30.438859959Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/cyanheads/nonprofit-explorer-mcp-server",
   "category": "Developer Tools",
-  "contributors": 1,
+  "vendor": "cyanheads",
+  "stars": 2,
+  "npm_package": "@cyanheads/nonprofit-explorer-mcp-server",
+  "npm_downloads_monthly": 1119,
+  "license": "Apache-2.0",
+  "language": "TypeScript",
   "description": "Search and explore 1.8M+ US nonprofits, fetch Form 990 financials, and access IRS filing history via MCP. STDIO or Streamable HTTP.",
   "findings": [
     {
@@ -52,21 +64,51 @@
       "tool_name": "nonprofit_get_filings"
     }
   ],
-  "forks": 0,
-  "grade": "A",
-  "language": "TypeScript",
-  "last_commit_at": "2026-11-13T11:12:54Z",
-  "last_release_at": "2026-11-03T08:13:47Z",
-  "latest_release_name": "v0.3.0: Nonprofit filing coverage and financial interpretation",
-  "latest_release_tag": "v0.3.0",
-  "latest_release_url": "https://github.com/cyanheads/nonprofit-explorer-mcp-server/releases/tag/v0.3.0",
-  "latest_release_version": "v0.3.0",
-  "license": "Apache-2.0",
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "info": 5
+  },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "npm_downloads_monthly": 1106,
-  "npm_package": "@cyanheads/nonprofit-explorer-mcp-server",
-  "risk_score": 2,
-  "scan_date": "2026-11-14T04:27:55.676335018Z",
+  "tool_names": [
+    "nonprofit_get_filings",
+    "nonprofit_get_organization",
+    "nonprofit_search_organizations"
+  ],
+  "tool_contexts": [
+    {
+      "tool_name": "nonprofit_search_organizations",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "nonprofit_get_organization",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "nonprofit_get_filings",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (to_year)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
   "scan_history": [
     {
       "scan_date": "2026-10-26T02:38:35Z",
@@ -169,56 +211,12 @@
       "grade": "A",
       "risk_score": 2,
       "version": "0.3.0"
-    }
-  ],
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/cyanheads/nonprofit-explorer-mcp-server",
-  "stars": 2,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 1,
-    "info": 5
-  },
-  "tool_contexts": [
-    {
-      "tool_name": "nonprofit_search_organizations",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "uses_network"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
-      "tool_name": "nonprofit_get_organization",
-      "action": "ALLOW",
+      "scan_date": "2026-11-14T04:27:55Z",
       "grade": "A",
-      "behavior": [
-        "reads_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "nonprofit_get_filings",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (to_year)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+      "risk_score": 2,
+      "version": "0.3.0"
     }
-  ],
-  "tool_id": "cyanheads-nonprofit-explorer-mcp-server",
-  "tool_names": [
-    "nonprofit_get_filings",
-    "nonprofit_get_organization",
-    "nonprofit_search_organizations"
-  ],
-  "vendor": "cyanheads",
-  "version": "0.3.0"
+  ]
 }

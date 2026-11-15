@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 587 |
 | **Language** | Python |
 | **Source** | [mcp-server-gateway](https://github.com/harish-gaggar/mcp-server-gateway) |
-| **Scan Date** | 2026-11-14 |
+| **Scan Date** | 2026-11-15 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

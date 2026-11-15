@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `3.4.2` |
 | **Vendor** | Agents365-ai |
-| **Stars** | ⭐ 10483 |
+| **Stars** | ⭐ 10774 |
 | **Language** | Python |
 | **Source** | [drawio-skill](https://github.com/Agents365-ai/drawio-skill) |
 | **Scan Date** | 2026-11-01 |

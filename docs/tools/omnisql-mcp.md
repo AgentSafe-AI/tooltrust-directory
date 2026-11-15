@@ -10,9 +10,10 @@
 | **Vendor** | srthkdev |
 | **Stars** | ⭐ 91 |
 | **npm Package** | `omnisql-mcp` |
+| **npm Downloads (30d)** | 2.0k |
 | **Language** | TypeScript |
 | **Source** | [omnisql-mcp](https://github.com/srthkdev/omnisql-mcp) |
-| **Scan Date** | 2026-11-13 |
+| **Scan Date** | 2026-11-15 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

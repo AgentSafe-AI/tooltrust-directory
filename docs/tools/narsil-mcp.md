@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.7.2` |
 | **Vendor** | postrv |
-| **Stars** | ⭐ 187 |
+| **Stars** | ⭐ 188 |
 | **Language** | Rust |
 | **Source** | [narsil-mcp](https://github.com/postrv/narsil-mcp) |
-| **Scan Date** | 2026-11-14 |
+| **Scan Date** | 2026-11-15 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

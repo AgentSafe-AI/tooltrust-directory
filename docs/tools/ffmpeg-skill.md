@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.1.1` |
 | **Vendor** | kajisho5 |
-| **Stars** | ⭐ 4199 |
+| **Stars** | ⭐ 5603 |
 | **npm Package** | `ffmpeg-skill` |
 | **npm Downloads (30d)** | 12.5k |
 | **Language** | Python |

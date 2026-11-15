@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.3` |
 | **Vendor** | affaan-m |
-| **Stars** | ⭐ 294130 |
+| **Stars** | ⭐ 303185 |
 | **npm Package** | `ecc-universal` |
 | **npm Downloads (30d)** | 58.2k |
 | **Language** | JavaScript |

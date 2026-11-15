@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.15.2` |
 | **Vendor** | Portkey-AI |
-| **Stars** | ⭐ 13299 |
+| **Stars** | ⭐ 13380 |
 | **npm Package** | `@portkey-ai/gateway` |
 | **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |

@@ -10,10 +10,10 @@
 | **Vendor** | signal8ai |
 | **Stars** | ⭐ 425 |
 | **npm Package** | `@signal8ai/mcp` |
-| **npm Downloads (30d)** | 873 |
+| **npm Downloads (30d)** | 933 |
 | **Language** | TypeScript |
 | **Source** | [signal8-mcp](https://github.com/signal8ai/signal8-mcp) |
-| **Scan Date** | 2026-11-14 |
+| **Scan Date** | 2026-11-15 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
