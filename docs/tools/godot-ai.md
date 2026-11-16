@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `4.3.1` |
 | **Vendor** | hi-godot |
-| **Stars** | ⭐ 3310 |
+| **Stars** | ⭐ 3560 |
 | **Language** | GDScript |
 | **Source** | [godot-ai](https://github.com/hi-godot/godot-ai) |
 | **Scan Date** | 2026-11-01 |

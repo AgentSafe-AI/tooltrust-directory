@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.1` |
 | **Vendor** | golf-mcp |
-| **Stars** | ⭐ 840 |
+| **Stars** | ⭐ 843 |
 | **Language** | Python |
 | **Source** | [golf](https://github.com/golf-mcp/golf) |
 | **Scan Date** | 2026-11-01 |

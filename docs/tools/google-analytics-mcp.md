@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.0` |
 | **Vendor** | googleanalytics |
-| **Stars** | ⭐ 3606 |
+| **Stars** | ⭐ 3796 |
 | **Language** | Python |
 | **Source** | [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) |
 | **Scan Date** | 2026-11-01 |

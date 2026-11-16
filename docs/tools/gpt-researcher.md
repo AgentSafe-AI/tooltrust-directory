@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `3.7.0` |
 | **Vendor** | assafelovic |
-| **Stars** | ⭐ 30407 |
+| **Stars** | ⭐ 30713 |
 | **Language** | Python |
 | **Source** | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) |
 | **Scan Date** | 2026-11-01 |

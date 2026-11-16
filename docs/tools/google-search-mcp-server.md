@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `3.0.0` |
 | **Vendor** | mixelpixx |
-| **Stars** | ⭐ 258 |
+| **Stars** | ⭐ 262 |
 | **Language** | TypeScript |
 | **Source** | [google-search-mcp-server](https://github.com/mixelpixx/Google-Search-MCP-Server) |
 | **Scan Date** | 2026-10-15 |

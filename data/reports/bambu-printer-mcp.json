@@ -1,16 +1,16 @@
 {
   "tool_id": "bambu-printer-mcp",
-  "version": "1.1.94",
+  "version": "1.1.95",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-11-15T04:09:02.350679021Z",
+  "scan_date": "2026-11-16T04:09:16.772593412Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DMontgomery40/bambu-printer-mcp",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 322,
+  "stars": 323,
   "npm_package": "bambu-printer-mcp",
-  "npm_downloads_monthly": 26751,
+  "npm_downloads_monthly": 27146,
   "license": "GPL-2.0",
   "language": "TypeScript",
   "description": "MCP server for Bambu Lab 3D printers — STL manipulation, BambuStudio  or FULU/orca slicing, Blender MCP integration, and direct printer control",
@@ -1547,6 +1547,30 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: network access, filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "counterpart_diagnostics"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "counterpart_diagnostics"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "counterpart_diagnostics"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "counterpart_discover_printers"
@@ -1860,8 +1884,8 @@
     "critical": 2,
     "high": 0,
     "medium": 6,
-    "low": 47,
-    "info": 175
+    "low": 48,
+    "info": 177
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1884,6 +1908,7 @@
     "cancel_print",
     "center_model",
     "clear_hms_errors",
+    "counterpart_diagnostics",
     "counterpart_discover_printers",
     "counterpart_make_3mf",
     "counterpart_print_assess",
@@ -2671,6 +2696,17 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "counterpart_diagnostics",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "counterpart_discover_printers",
       "action": "ALLOW",
       "grade": "A",
@@ -3124,6 +3160,12 @@
     },
     {
       "scan_date": "2026-11-14T04:24:56Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.1.94"
+    },
+    {
+      "scan_date": "2026-11-15T04:09:02Z",
       "grade": "C",
       "risk_score": 27,
       "version": "1.1.94"
