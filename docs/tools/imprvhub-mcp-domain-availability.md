@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `0.4.1` |
 | **Vendor** | imprvhub |
-| **Stars** | ⭐ 61 |
+| **Stars** | ⭐ 62 |
 | **Language** | Python |
 | **Source** | [imprvhub-mcp-domain-availability](https://github.com/imprvhub/mcp-domain-availability) |
 | **Scan Date** | 2026-10-15 |

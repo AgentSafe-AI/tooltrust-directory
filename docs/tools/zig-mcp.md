@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.4.0` |
 | **Vendor** | zig-wasm |
-| **Stars** | ⭐ 175 |
+| **Stars** | ⭐ 176 |
 | **npm Package** | `zig-mcp` |
-| **npm Downloads (30d)** | 249 |
+| **npm Downloads (30d)** | 250 |
 | **Language** | TypeScript |
 | **Source** | [zig-mcp](https://github.com/zig-wasm/zig-mcp) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

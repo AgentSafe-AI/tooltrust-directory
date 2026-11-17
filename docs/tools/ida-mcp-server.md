@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.3.4` |
 | **Vendor** | MxIris-Reverse-Engineering |
-| **Stars** | ⭐ 549 |
+| **Stars** | ⭐ 550 |
 | **Language** | Python |
 | **Source** | [ida-mcp-server](https://github.com/MxIris-Reverse-Engineering/ida-mcp-server) |
 | **Scan Date** | 2026-03-18 |

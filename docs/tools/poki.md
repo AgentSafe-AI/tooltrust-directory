@@ -1,6 +1,6 @@
 # 🟢 poki
 
-> Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.
+> Poki uses your iPhone like you do. An open-source agent that sees your screen and taps, types, and swipes across any app on your real device. Runs locally, plugs right into Claude Code and any MCP agent.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | JosssphZhou |
-| **Stars** | ⭐ 1363 |
+| **Stars** | ⭐ 1528 |
 | **npm Package** | `poki-mcp` |
 | **Language** | Swift |
 | **Source** | [poki](https://github.com/JosssphZhou/poki) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

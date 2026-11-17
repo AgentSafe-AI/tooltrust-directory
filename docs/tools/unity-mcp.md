@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `com.ivanmurzak.unity.mcp.timeline/2.1.1` |
 | **Vendor** | IvanMurzak |
-| **Stars** | ⭐ 4641 |
+| **Stars** | ⭐ 4649 |
 | **Language** | C# |
 | **Source** | [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

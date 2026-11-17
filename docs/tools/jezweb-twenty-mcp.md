@@ -6,7 +6,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.0` |
 | **Vendor** | jezweb |
-| **Stars** | ⭐ 52 |
+| **Stars** | ⭐ 53 |
 | **npm Package** | `twenty-mcp-server` |
 | **npm Downloads (30d)** | 615 |
 | **Language** | TypeScript |

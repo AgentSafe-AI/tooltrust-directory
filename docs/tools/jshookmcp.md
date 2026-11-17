@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.3` |
 | **Vendor** | vmoranv |
-| **Stars** | ⭐ 2098 |
+| **Stars** | ⭐ 2121 |
 | **npm Package** | `@jshookmcp/jshook` |
 | **npm Downloads (30d)** | 4.7k |
 | **Language** | TypeScript |

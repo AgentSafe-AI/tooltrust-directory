@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **C** |
 | **Risk Score** | 27 |
-| **Version** | `1.1.95` |
+| **Version** | `1.1.98` |
 | **Vendor** | DMontgomery40 |
-| **Stars** | ⭐ 323 |
+| **Stars** | ⭐ 327 |
 | **npm Package** | `bambu-printer-mcp` |
-| **npm Downloads (30d)** | 27.1k |
+| **npm Downloads (30d)** | 27.9k |
 | **Language** | TypeScript |
 | **Source** | [bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -25,8 +25,8 @@
 | Critical | 2 |
 | High     | 0 |
 | Medium   | 6 |
-| Low      | 48 |
-| Info     | 177 |
+| Low      | 49 |
+| Info     | 179 |
 
 ## Detailed Findings
 
@@ -467,7 +467,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: filesystem access
+declared capabilities: filesystem access, HTTP requests
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -479,10 +479,22 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Low
 
 **Description:**
-input schema exposes 42 properties (threshold: 10)
+input schema exposes 43 properties (threshold: 10)
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### 🔵 ⚡ `AS-011` — DoS Resilience — Missing Rate Limit / Timeout
+
+**Severity:** Low
+
+**Description:**
+tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration
+
+**Recommendation:**
+Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
 
 ---
 
@@ -659,7 +671,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "password" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -671,7 +683,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "password" accepts a credential (informational; not evidence of insecure handling)
+input parameter "bambu_token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -2675,6 +2687,30 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
+declared capabilities: filesystem access
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
 declared capabilities: filesystem access, HTTP requests
 
 **Recommendation:**
@@ -2735,7 +2771,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-declared capabilities: network access
+declared capabilities: code/command execution, network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

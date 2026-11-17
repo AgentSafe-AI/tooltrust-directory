@@ -10,10 +10,10 @@
 | **Vendor** | zhizhuodemao |
 | **Stars** | ⭐ 3081 |
 | **npm Package** | `js-reverse-mcp` |
-| **npm Downloads (30d)** | 4.8k |
+| **npm Downloads (30d)** | 4.7k |
 | **Language** | TypeScript |
 | **Source** | [js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

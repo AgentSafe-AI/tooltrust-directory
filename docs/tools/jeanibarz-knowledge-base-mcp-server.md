@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.0` |
 | **Vendor** | jeanibarz |
-| **Stars** | ⭐ 53 |
+| **Stars** | ⭐ 55 |
 | **npm Package** | `@jeanibarz/knowledge-base-mcp-server` |
 | **npm Downloads (30d)** | 54 |
 | **Language** | TypeScript |

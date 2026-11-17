@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2026.1106.0` |
 | **Vendor** | paperclipai |
-| **Stars** | ⭐ 114170 |
+| **Stars** | ⭐ 114402 |
 | **npm Package** | `paperclip` |
-| **npm Downloads (30d)** | 9.8k |
+| **npm Downloads (30d)** | 9.4k |
 | **Language** | TypeScript |
 | **Source** | [paperclip](https://github.com/paperclipai/paperclip) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

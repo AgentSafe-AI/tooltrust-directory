@@ -1,16 +1,16 @@
 {
   "tool_id": "bambu-printer-mcp",
-  "version": "1.1.95",
+  "version": "1.1.98",
   "grade": "C",
   "risk_score": 27,
-  "scan_date": "2026-11-16T04:09:16.772593412Z",
+  "scan_date": "2026-11-17T06:02:58.796488779Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/DMontgomery40/bambu-printer-mcp",
   "category": "Developer Tools",
   "vendor": "DMontgomery40",
-  "stars": 323,
+  "stars": 327,
   "npm_package": "bambu-printer-mcp",
-  "npm_downloads_monthly": 27146,
+  "npm_downloads_monthly": 27900,
   "license": "GPL-2.0",
   "language": "TypeScript",
   "description": "MCP server for Bambu Lab 3D printers — STL manipulation, BambuStudio  or FULU/orca slicing, Blender MCP integration, and direct printer control",
@@ -307,7 +307,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: filesystem access",
+      "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "slice_stl"
     },
@@ -315,8 +315,16 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 42 properties (threshold: 10)",
+      "description": "input schema exposes 43 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "slice_stl"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
       "tool_name": "slice_stl"
     },
     {
@@ -435,7 +443,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -443,7 +451,7 @@
       "id": "AS-010",
       "severity": "Info",
       "title": "Insecure Secret Handling",
-      "description": "input parameter \"password\" accepts a credential (informational; not evidence of insecure handling)",
+      "description": "input parameter \"bambu_token\" accepts a credential (informational; not evidence of insecure handling)",
       "recommendation": "Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.",
       "tool_name": "print_3mf_bambu_network"
     },
@@ -1779,6 +1787,22 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "counterpart_part_meshes"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "counterpart_part_meshes"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
       "description": "declared capabilities: filesystem access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "blender_mcp_setup"
@@ -1819,7 +1843,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "fusion_mcp_status"
     },
@@ -1884,8 +1908,8 @@
     "critical": 2,
     "high": 0,
     "medium": 6,
-    "low": 48,
-    "info": 177
+    "low": 49,
+    "info": 179
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -1911,6 +1935,7 @@
     "counterpart_diagnostics",
     "counterpart_discover_printers",
     "counterpart_make_3mf",
+    "counterpart_part_meshes",
     "counterpart_print_assess",
     "counterpart_print_progress",
     "counterpart_print_record",
@@ -2111,6 +2136,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "uses_network",
         "writes_files"
       ],
       "destinations": [
@@ -2802,6 +2828,16 @@
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
     },
     {
+      "tool_name": "counterpart_part_meshes",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
       "tool_name": "blender_mcp_setup",
       "action": "ALLOW",
       "grade": "A",
@@ -3169,6 +3205,12 @@
       "grade": "C",
       "risk_score": 27,
       "version": "1.1.94"
+    },
+    {
+      "scan_date": "2026-11-16T04:09:16Z",
+      "grade": "C",
+      "risk_score": 27,
+      "version": "1.1.95"
     }
   ]
 }

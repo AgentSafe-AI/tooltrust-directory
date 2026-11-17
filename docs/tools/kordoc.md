@@ -1,19 +1,19 @@
 # 🟢 kordoc
 
-> 한국 문서를 읽고·고치고·새로 쓰는 AI 문서 도구 — HWP·HWPX·PDF·오피스·스캔(OCR)을 Markdown으로, 신구대조·서식 보존 편집·Markdown→HWPX 작성·HWP→HWPX 변환·양식 채우기·공문서 검수까지. 라이브러리·CLI·MCP | Read, diff, edit, write and convert Korean documents (HWP, HWPX, PDF, Office, scans) — library, CLI and MCP server
+> 📄 한국 공문서를 AI가 읽고 쓰게 합니다. HWP·HWPX·PDF·오피스·스캔 이미지를 Markdown으로, Markdown을 HWPX 공문서로 바꾸고 양식 채우기·신구대조·서식 보존 편집까지. 라이브러리·CLI·MCP 서버 | Korean documents for AI: HWP, HWPX, PDF, Office and scans to Markdown, and Markdown back to HWPX. Library, CLI and MCP server.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `4.24.80` |
+| **Version** | `4.24.82` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2996 |
+| **Stars** | ⭐ 3015 |
 | **npm Package** | `kordoc` |
-| **npm Downloads (30d)** | 260.4k |
+| **npm Downloads (30d)** | 257.6k |
 | **Language** | TypeScript |
 | **Source** | [kordoc](https://github.com/chrisryugj/kordoc) |
-| **Scan Date** | 2026-11-16 |
+| **Scan Date** | 2026-11-17 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

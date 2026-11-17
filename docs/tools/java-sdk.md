@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.2.0-M1` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 3760 |
+| **Stars** | ⭐ 3773 |
 | **Language** | Java |
 | **Source** | [java-sdk](https://github.com/modelcontextprotocol/java-sdk) |
 | **Scan Date** | 2026-11-01 |
