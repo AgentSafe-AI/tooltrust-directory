@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `10.5.0` |
 | **Vendor** | BinarCode |
-| **Stars** | ⭐ 683 |
+| **Stars** | ⭐ 684 |
 | **Language** | PHP |
 | **Source** | [laravel-restify](https://github.com/BinarCode/laravel-restify) |
 | **Scan Date** | 2026-11-01 |

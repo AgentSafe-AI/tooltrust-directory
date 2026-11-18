@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.6.1` |
 | **Vendor** | kkjdaniel |
-| **Stars** | ⭐ 58 |
+| **Stars** | ⭐ 62 |
 | **Language** | Go |
 | **Source** | [kkjdaniel-bgg-mcp](https://github.com/kkjdaniel/bgg-mcp) |
 | **Scan Date** | 2026-10-15 |

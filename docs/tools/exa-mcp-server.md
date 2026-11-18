@@ -10,10 +10,10 @@
 | **Vendor** | exa-labs |
 | **Stars** | ⭐ 5241 |
 | **npm Package** | `exa-mcp-server` |
-| **npm Downloads (30d)** | 176.9k |
+| **npm Downloads (30d)** | 180.6k |
 | **Language** | TypeScript |
 | **Source** | [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server) |
-| **Scan Date** | 2026-11-17 |
+| **Scan Date** | 2026-11-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

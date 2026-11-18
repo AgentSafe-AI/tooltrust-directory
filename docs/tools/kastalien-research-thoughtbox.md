@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.2.0` |
 | **Vendor** | Kastalien-Research |
-| **Stars** | ⭐ 65 |
+| **Stars** | ⭐ 66 |
 | **npm Package** | `@kastalien-research/thoughtbox` |
 | **npm Downloads (30d)** | 184 |
 | **Language** | TypeScript |

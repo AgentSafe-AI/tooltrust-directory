@@ -10,10 +10,10 @@
 | **Vendor** | DaxianLee |
 | **Stars** | ⭐ 1494 |
 | **npm Package** | `cocos-mcp-server` |
-| **npm Downloads (30d)** | 103 |
+| **npm Downloads (30d)** | 102 |
 | **Language** | TypeScript |
 | **Source** | [cocos-mcp-server](https://github.com/DaxianLee/cocos-mcp-server) |
-| **Scan Date** | 2026-11-17 |
+| **Scan Date** | 2026-11-18 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

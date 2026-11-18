@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `2.2.16-canary.12` |
 | **Vendor** | lobehub |
-| **Stars** | ⭐ 83737 |
+| **Stars** | ⭐ 85729 |
 | **npm Package** | `@lobehub/lobehub` |
 | **npm Downloads (30d)** | 2.0k |
 | **Language** | TypeScript |

@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `5.0.0-rc.30` |
 | **Vendor** | kreuzberg-dev |
-| **Stars** | ⭐ 9515 |
+| **Stars** | ⭐ 9598 |
 | **npm Package** | `xberg-root` |
 | **Language** | Rust |
 | **Source** | [kreuzberg](https://github.com/kreuzberg-dev/kreuzberg) |

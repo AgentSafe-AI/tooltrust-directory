@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `4.15.23` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2867 |
+| **Stars** | ⭐ 2894 |
 | **npm Package** | `korean-law-mcp` |
 | **npm Downloads (30d)** | 26.6k |
 | **Language** | TypeScript |
