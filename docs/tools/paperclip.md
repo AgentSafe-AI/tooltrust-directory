@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `2026.1106.0` |
+| **Version** | `2026.1117.0` |
 | **Vendor** | paperclipai |
-| **Stars** | ⭐ 114618 |
+| **Stars** | ⭐ 114858 |
 | **npm Package** | `paperclip` |
-| **npm Downloads (30d)** | 9.6k |
+| **npm Downloads (30d)** | 9.8k |
 | **Language** | TypeScript |
 | **Source** | [paperclip](https://github.com/paperclipai/paperclip) |
-| **Scan Date** | 2026-11-18 |
+| **Scan Date** | 2026-11-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

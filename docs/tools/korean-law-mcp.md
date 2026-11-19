@@ -1,19 +1,19 @@
 # 🟢 korean-law-mcp
 
-> 법령·판례를 AI가 찾고 인용까지 검증하는 MCP 서버 — 법제처 API 42개를 도구 10개로: 법령·조문·별표, 판례·헌재·해석례 23개 도메인, 조례 정비 레이더, 신구조문대비표 | MCP server for Korean law — statutes, precedents, ordinances, comparison tables and citation verification
+> ⚖️ 법령·판례를 AI가 법제처 원문에서 찾고 인용까지 검증하는 MCP 서버. 법제처 API 42개를 도구 10개로: 법령·조문·별표, 판례류 23개 도메인, 조례 정비 레이더, 신구조문대비표 | MCP server for Korean law: statutes, precedents and ordinances from the official source, with citation checks for AI answers.
 
 | Field | Value |
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `4.15.23` |
+| **Version** | `4.15.24` |
 | **Vendor** | chrisryugj |
-| **Stars** | ⭐ 2894 |
+| **Stars** | ⭐ 2899 |
 | **npm Package** | `korean-law-mcp` |
-| **npm Downloads (30d)** | 26.6k |
+| **npm Downloads (30d)** | 28.5k |
 | **Language** | TypeScript |
 | **Source** | [korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) |
-| **Scan Date** | 2026-11-13 |
+| **Scan Date** | 2026-11-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

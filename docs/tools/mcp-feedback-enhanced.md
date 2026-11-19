@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.8.5` |
 | **Vendor** | Minidoracat |
-| **Stars** | ⭐ 3753 |
+| **Stars** | ⭐ 3750 |
 | **Language** | JavaScript |
 | **Source** | [mcp-feedback-enhanced](https://github.com/Minidoracat/mcp-feedback-enhanced) |
 | **Scan Date** | 2026-11-01 |

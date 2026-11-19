@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.7.1` |
+| **Version** | `2.0.0` |
 | **Vendor** | bytebase |
-| **Stars** | ⭐ 3870 |
+| **Stars** | ⭐ 3877 |
 | **npm Package** | `dbhub` |
-| **npm Downloads (30d)** | 64 |
+| **npm Downloads (30d)** | 65 |
 | **Language** | TypeScript |
 | **Source** | [dbhub](https://github.com/bytebase/dbhub) |
-| **Scan Date** | 2026-11-18 |
+| **Scan Date** | 2026-11-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

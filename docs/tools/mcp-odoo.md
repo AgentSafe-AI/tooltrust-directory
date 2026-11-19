@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.3.2` |
 | **Vendor** | erpipe-org |
-| **Stars** | ⭐ 427 |
+| **Stars** | ⭐ 436 |
 | **Language** | Python |
 | **Source** | [mcp-odoo](https://github.com/erpipe-org/mcp-odoo) |
 | **Scan Date** | 2026-11-01 |

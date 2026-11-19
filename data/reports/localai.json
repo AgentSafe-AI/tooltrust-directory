@@ -1,68 +1,86 @@
 {
+  "tool_id": "localai",
+  "version": "5.0.0",
+  "grade": "I",
+  "risk_score": 0,
+  "scan_date": "2026-11-19T05:14:56Z",
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/mudler/LocalAI",
   "category": "Developer Tools",
-  "contributors": 277,
+  "vendor": "mudler",
+  "stars": 50443,
+  "license": "MIT",
+  "language": "Go",
   "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 4,
-      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-      "file": "pkg/mcp/localaitools/server.go",
-      "language": "go"
-    },
-    {
-      "kind": "init",
-      "line": 38,
-      "snippet": "mcp.NewServer(",
-      "file": "pkg/mcp/localaitools/server.go",
-      "language": "go"
-    }
-  ],
   "findings": [
     {
       "id": "AS-018",
       "severity": "Info",
       "title": "Embedded MCP Server Detected",
-      "description": "Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
+      "description": "Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.",
       "recommendation": "Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.",
       "metadata": {
         "evidence": [
           {
             "kind": "import",
+            "line": 5,
+            "snippet": "'@modelcontextprotocol/sdk",
+            "file": "core/http/react-ui/e2e/mcp-fixture.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "init",
+            "line": 15,
+            "snippet": "new McpServer(",
+            "file": "core/http/react-ui/e2e/mcp-fixture.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 16,
+            "snippet": ".registerTool(",
+            "file": "core/http/react-ui/e2e/mcp-fixture.js",
+            "language": "typescript"
+          },
+          {
+            "kind": "import",
             "line": 4,
             "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
-            "file": "pkg/mcp/localaitools/server.go",
+            "file": "core/services/localaitools/server.go",
             "language": "go"
           },
           {
             "kind": "init",
-            "line": 38,
+            "line": 46,
             "snippet": "mcp.NewServer(",
-            "file": "pkg/mcp/localaitools/server.go",
+            "file": "core/services/localaitools/server.go",
+            "language": "go"
+          },
+          {
+            "kind": "import",
+            "line": 9,
+            "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+            "file": "core/services/studio/nibharness/tools.go",
+            "language": "go"
+          },
+          {
+            "kind": "init",
+            "line": 27,
+            "snippet": "mcp.NewServer(",
+            "file": "core/services/studio/nibharness/tools.go",
+            "language": "go"
+          },
+          {
+            "kind": "tool_definition",
+            "line": 37,
+            "snippet": "AddTool(",
+            "file": "core/services/studio/nibharness/tools.go",
             "language": "go"
           }
         ]
       }
     }
   ],
-  "forks": 4617,
-  "grade": "I",
-  "has_embedded_mcp": true,
-  "language": "Go",
-  "last_commit_at": "2026-11-17T23:25:56Z",
-  "last_release_at": "2026-10-23T10:27:00Z",
-  "latest_release_name": "v4.12.1",
-  "latest_release_tag": "v4.12.1",
-  "latest_release_url": "https://github.com/mudler/LocalAI/releases/tag/v4.12.1",
-  "latest_release_version": "v4.12.1",
-  "license": "MIT",
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
-  "risk_score": 0,
-  "scan_date": "2026-11-18T05:20:03Z",
-  "scan_incomplete": true,
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/mudler/LocalAI",
-  "stars": 50428,
   "summary": {
     "critical": 0,
     "high": 0,
@@ -70,7 +88,65 @@
     "low": 0,
     "info": 1
   },
-  "tool_id": "localai",
-  "vendor": "mudler",
-  "version": "4.12.1"
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "scan_incomplete": true,
+  "has_embedded_mcp": true,
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 5,
+      "snippet": "'@modelcontextprotocol/sdk",
+      "file": "core/http/react-ui/e2e/mcp-fixture.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 15,
+      "snippet": "new McpServer(",
+      "file": "core/http/react-ui/e2e/mcp-fixture.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 16,
+      "snippet": ".registerTool(",
+      "file": "core/http/react-ui/e2e/mcp-fixture.js",
+      "language": "typescript"
+    },
+    {
+      "kind": "import",
+      "line": 4,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "core/services/localaitools/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 46,
+      "snippet": "mcp.NewServer(",
+      "file": "core/services/localaitools/server.go",
+      "language": "go"
+    },
+    {
+      "kind": "import",
+      "line": 9,
+      "snippet": "\"github.com/modelcontextprotocol/go-sdk/mcp\"",
+      "file": "core/services/studio/nibharness/tools.go",
+      "language": "go"
+    },
+    {
+      "kind": "init",
+      "line": 27,
+      "snippet": "mcp.NewServer(",
+      "file": "core/services/studio/nibharness/tools.go",
+      "language": "go"
+    },
+    {
+      "kind": "tool_definition",
+      "line": 37,
+      "snippet": "AddTool(",
+      "file": "core/services/studio/nibharness/tools.go",
+      "language": "go"
+    }
+  ]
 }

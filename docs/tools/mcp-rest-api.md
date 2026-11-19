@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.4.0` |
 | **Vendor** | dkmaker |
-| **Stars** | ⭐ 103 |
+| **Stars** | ⭐ 104 |
 | **npm Package** | `dkmaker-mcp-rest-api` |
 | **npm Downloads (30d)** | 365 |
 | **Language** | JavaScript |

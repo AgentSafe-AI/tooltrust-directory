@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `mcp-framework-v0.2.22` |
 | **Vendor** | QuantGeekDev |
-| **Stars** | ⭐ 930 |
+| **Stars** | ⭐ 931 |
 | **npm Package** | `mcp-framework` |
 | **npm Downloads (30d)** | 201.9k |
 | **Language** | TypeScript |

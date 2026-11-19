@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `0.13.3` |
 | **Vendor** | jordan-gibbs |
-| **Stars** | ⭐ 4867 |
+| **Stars** | ⭐ 4900 |
 | **Language** | Python |
 | **Source** | [hyperresearch](https://github.com/jordan-gibbs/hyperresearch) |
-| **Scan Date** | 2026-11-18 |
+| **Scan Date** | 2026-11-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

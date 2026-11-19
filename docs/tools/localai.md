@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `4.12.1` |
+| **Version** | `5.0.0` |
 | **Vendor** | mudler |
-| **Stars** | ⭐ 50428 |
+| **Stars** | ⭐ 50443 |
 | **Language** | Go |
 | **Source** | [localai](https://github.com/mudler/LocalAI) |
-| **Scan Date** | 2026-11-18 |
+| **Scan Date** | 2026-11-19 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -33,7 +33,7 @@
 **Severity:** Info
 
 **Description:**
-Embedded MCP server detected in go source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
+Embedded MCP server detected in typescript source, but tool enumeration was not possible. Manual review is required for auth, scope, and input validation.
 
 **Recommendation:**
 Source-level MCP SDK usage was detected, but tools could not be enumerated statically. Run a sandboxed live scan if possible and manually review auth, scope, and input validation before trusting this server.
