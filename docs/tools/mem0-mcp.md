@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.8.0` |
 | **Vendor** | pinkpixel-dev |
-| **Stars** | ⭐ 96 |
+| **Stars** | ⭐ 97 |
 | **npm Package** | `@pinkpixel/mem0-mcp` |
 | **npm Downloads (30d)** | 141 |
 | **Language** | TypeScript |

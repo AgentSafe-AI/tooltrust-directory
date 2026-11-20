@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.0.0` |
 | **Vendor** | thetahealth |
-| **Stars** | ⭐ 1408 |
+| **Stars** | ⭐ 1628 |
 | **Language** | Python |
 | **Source** | [mirobody](https://github.com/thetahealth/mirobody) |
 | **Scan Date** | 2026-10-15 |

@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.16.5` |
 | **Vendor** | jacob-bd |
-| **Stars** | ⭐ 6538 |
+| **Stars** | ⭐ 6544 |
 | **Language** | Python |
 | **Source** | [gemini-notebook-mcp-cli](https://github.com/jacob-bd/gemini-notebook-mcp-cli) |
-| **Scan Date** | 2026-11-19 |
+| **Scan Date** | 2026-11-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

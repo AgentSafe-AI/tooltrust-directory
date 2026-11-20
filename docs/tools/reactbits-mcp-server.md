@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.1.1` |
 | **Vendor** | ceorkm |
-| **Stars** | ⭐ 72 |
+| **Stars** | ⭐ 74 |
 | **npm Package** | `reactbits-dev-mcp-server` |
-| **npm Downloads (30d)** | 1.6k |
+| **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [reactbits-mcp-server](https://github.com/ceorkm/reactbits-mcp-server) |
-| **Scan Date** | 2026-11-10 |
+| **Scan Date** | 2026-11-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

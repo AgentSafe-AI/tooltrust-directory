@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.1` |
 | **Vendor** | InditexTech |
-| **Stars** | ⭐ 343 |
+| **Stars** | ⭐ 346 |
 | **npm Package** | `mcp-server-simulator-ios-idb` |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-simulator-ios-idb](https://github.com/InditexTech/mcp-server-simulator-ios-idb) |

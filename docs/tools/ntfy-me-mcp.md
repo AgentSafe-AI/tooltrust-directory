@@ -10,10 +10,9 @@
 | **Vendor** | gitmotion |
 | **Stars** | ⭐ 77 |
 | **npm Package** | `ntfy-me-mcp` |
-| **npm Downloads (30d)** | 842 |
 | **Language** | TypeScript |
 | **Source** | [ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) |
-| **Scan Date** | 2026-11-19 |
+| **Scan Date** | 2026-11-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

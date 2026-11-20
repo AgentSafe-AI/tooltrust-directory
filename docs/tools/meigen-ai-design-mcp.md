@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `3.1.1` |
 | **Vendor** | jau123 |
-| **Stars** | ⭐ 1797 |
+| **Stars** | ⭐ 1810 |
 | **npm Package** | `meigen` |
 | **npm Downloads (30d)** | 2.6k |
 | **Language** | TypeScript |

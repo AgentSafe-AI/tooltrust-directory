@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | sparfenyuk |
-| **Stars** | ⭐ 190 |
+| **Stars** | ⭐ 191 |
 | **Language** | Python |
 | **Source** | [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) |
 | **Scan Date** | 2026-11-01 |

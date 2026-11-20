@@ -8,12 +8,12 @@
 | **Risk Score** | 27 |
 | **Version** | `0.0.86` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 39868 |
+| **Stars** | ⭐ 39912 |
 | **npm Package** | `@playwright/mcp` |
-| **npm Downloads (30d)** | 39.4M |
+| **npm Downloads (30d)** | 41.6M |
 | **Language** | TypeScript |
 | **Source** | [playwright-mcp](https://github.com/microsoft/playwright-mcp) |
-| **Scan Date** | 2026-11-19 |
+| **Scan Date** | 2026-11-20 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
