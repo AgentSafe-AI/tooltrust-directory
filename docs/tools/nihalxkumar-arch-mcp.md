@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `3.4.0` |
 | **Vendor** | nihalxkumar |
-| **Stars** | ⭐ 61 |
+| **Stars** | ⭐ 62 |
 | **Language** | Python |
 | **Source** | [nihalxkumar-arch-mcp](https://github.com/nihalxkumar/arch-mcp) |
 | **Scan Date** | 2026-10-15 |

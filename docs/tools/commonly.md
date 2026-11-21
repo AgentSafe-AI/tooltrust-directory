@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | Team-Commonly |
-| **Stars** | ⭐ 1409 |
+| **Stars** | ⭐ 1412 |
 | **npm Package** | `commonly` |
 | **npm Downloads (30d)** | 14 |
 | **Language** | JavaScript |
 | **Source** | [commonly](https://github.com/Team-Commonly/commonly) |
-| **Scan Date** | 2026-11-20 |
+| **Scan Date** | 2026-11-21 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

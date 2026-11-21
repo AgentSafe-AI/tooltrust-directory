@@ -1,6 +1,6 @@
 # 🟠 omniget
 
-> A local MCP server that gives your coding agent a desktop toolbox: downloads from YouTube, torrents and every site yt-dlp supports, media conversion, files, chats and system cleanup. One line connects Claude Code, Codex, Cursor or Gemini CLI, and sensitive actions wait for your click. Free and open source for Windows, macOS and Linux.
+> Local MCP server that lets Claude Code, Codex, Cursor and Gemini CLI use your own computer and your own logged-in accounts: chats, feeds, browser, files and downloads. Also a downloader for video, music and the courses you bought. Everything stays on your machine. Windows, macOS, Linux.
 
 | Field | Value |
 |-------|-------|
@@ -8,11 +8,11 @@
 | **Risk Score** | 27 |
 | **Version** | `1.0.1` |
 | **Vendor** | tonhowtf |
-| **Stars** | ⭐ 14507 |
+| **Stars** | ⭐ 14522 |
 | **npm Package** | `omniget` |
 | **Language** | Rust |
 | **Source** | [omniget](https://github.com/tonhowtf/omniget) |
-| **Scan Date** | 2026-11-20 |
+| **Scan Date** | 2026-11-21 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

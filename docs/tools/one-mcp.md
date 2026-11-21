@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.13` |
 | **Vendor** | burugo |
-| **Stars** | ⭐ 421 |
+| **Stars** | ⭐ 424 |
 | **Language** | Go |
 | **Source** | [one-mcp](https://github.com/burugo/one-mcp) |
 | **Scan Date** | 2026-11-01 |

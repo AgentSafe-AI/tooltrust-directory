@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.8` |
 | **Vendor** | leonardsellem |
-| **Stars** | ⭐ 1630 |
+| **Stars** | ⭐ 1631 |
 | **npm Package** | `@leonardsellem/n8n-mcp-server` |
 | **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |

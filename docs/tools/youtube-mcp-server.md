@@ -10,10 +10,10 @@
 | **Vendor** | ZubeidHendricks |
 | **Stars** | ⭐ 604 |
 | **npm Package** | `zubeid-youtube-mcp-server` |
-| **npm Downloads (30d)** | 2.0k |
+| **npm Downloads (30d)** | 2.1k |
 | **Language** | TypeScript |
 | **Source** | [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) |
-| **Scan Date** | 2026-11-20 |
+| **Scan Date** | 2026-11-21 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

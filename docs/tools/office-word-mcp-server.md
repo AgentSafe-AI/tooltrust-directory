@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `1.1.11` |
 | **Vendor** | GongRzhe |
-| **Stars** | ⭐ 2110 |
+| **Stars** | ⭐ 2116 |
 | **Language** | Python |
 | **Source** | [office-word-mcp-server](https://github.com/GongRzhe/Office-Word-MCP-Server) |
 | **Scan Date** | 2026-10-15 |

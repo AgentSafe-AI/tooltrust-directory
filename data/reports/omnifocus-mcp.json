@@ -1,19 +1,23 @@
 {
-  "tool_id": "omnifocus-mcp",
-  "version": "1.17.1",
-  "grade": "A",
-  "risk_score": 2,
-  "scan_date": "2026-11-20T05:11:22.912093595Z",
-  "scanner": "tooltrust-scanner/v0.3.20",
-  "source_url": "https://github.com/themotionmachine/OmniFocus-MCP",
   "category": "Developer Tools",
-  "vendor": "themotionmachine",
-  "stars": 254,
-  "npm_package": "omnifocus-mcp",
-  "npm_downloads_monthly": 2542,
-  "license": "MIT",
-  "language": "TypeScript",
+  "contributors": 16,
   "description": "Let LLMs interface with your tasks and projects through the Model Context Protocol. Add, organize, and query your OmniFocus database with natural language commands.",
+  "embedded_mcp_evidence": [
+    {
+      "kind": "import",
+      "line": 1,
+      "snippet": "\"@modelcontextprotocol/sdk",
+      "file": "src/buildServer.ts",
+      "language": "typescript"
+    },
+    {
+      "kind": "init",
+      "line": 78,
+      "snippet": "new McpServer(",
+      "file": "src/buildServer.ts",
+      "language": "typescript"
+    }
+  ],
   "findings": [
     {
       "id": "AS-002",
@@ -184,156 +188,22 @@
       "tool_name": "create_tag"
     }
   ],
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 3,
-    "info": 18
-  },
-  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "forks": 75,
+  "grade": "A",
   "has_embedded_mcp": true,
-  "embedded_mcp_evidence": [
-    {
-      "kind": "import",
-      "line": 1,
-      "snippet": "\"@modelcontextprotocol/sdk",
-      "file": "src/buildServer.ts",
-      "language": "typescript"
-    },
-    {
-      "kind": "init",
-      "line": 78,
-      "snippet": "new McpServer(",
-      "file": "src/buildServer.ts",
-      "language": "typescript"
-    }
-  ],
-  "tool_names": [
-    "add_omnifocus_task",
-    "add_project",
-    "batch_add_items",
-    "batch_remove_items",
-    "create_tag",
-    "dump_database",
-    "edit_item",
-    "get_perspective_view",
-    "list_perspectives",
-    "list_tags",
-    "query_omnifocus",
-    "remove_item"
-  ],
-  "tool_contexts": [
-    {
-      "tool_name": "dump_database",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "add_omnifocus_task",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "add_project",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "remove_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "destinations": [
-        "dynamic email recipient (allowPastOccurrence)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "edit_item",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (allowPastOccurrence)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "batch_add_items",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "batch_remove_items",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "query_omnifocus",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "reads_files",
-        "uses_network"
-      ],
-      "destinations": [
-        "dynamic email recipient (sortOrder)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_perspectives",
-      "action": "ALLOW",
-      "grade": "A",
-      "destinations": [
-        "dynamic email recipient (includeCustom)"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "get_perspective_view",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "list_tags",
-      "action": "ALLOW",
-      "grade": "A",
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    },
-    {
-      "tool_name": "create_tag",
-      "action": "ALLOW",
-      "grade": "A",
-      "behavior": [
-        "writes_files"
-      ],
-      "dependency_visibility": "No dependency data",
-      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
-    }
-  ],
+  "language": "TypeScript",
+  "last_commit_at": "2026-11-17T18:07:08Z",
+  "last_release_at": "2026-11-17T18:10:07Z",
+  "latest_release_name": "v1.17.1",
+  "latest_release_tag": "v1.17.1",
+  "latest_release_url": "https://github.com/themotionmachine/OmniFocus-MCP/releases/tag/v1.17.1",
+  "latest_release_version": "v1.17.1",
+  "license": "MIT",
+  "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
+  "npm_downloads_monthly": 2704,
+  "npm_package": "omnifocus-mcp",
+  "risk_score": 2,
+  "scan_date": "2026-11-21T05:07:47.375842591Z",
   "scan_history": [
     {
       "scan_date": "2026-10-23T02:53:36Z",
@@ -502,6 +372,150 @@
       "grade": "A",
       "risk_score": 2,
       "version": "1.17.1"
+    },
+    {
+      "scan_date": "2026-11-20T05:11:22Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "1.17.1"
     }
-  ]
+  ],
+  "scanner": "tooltrust-scanner/v0.3.20",
+  "source_url": "https://github.com/themotionmachine/OmniFocus-MCP",
+  "stars": 255,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 3,
+    "info": 18
+  },
+  "tool_contexts": [
+    {
+      "tool_name": "dump_database",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "add_omnifocus_task",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "add_project",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "remove_item",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "destinations": [
+        "dynamic email recipient (allowPastOccurrence)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "edit_item",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (allowPastOccurrence)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "batch_add_items",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "batch_remove_items",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "query_omnifocus",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "reads_files",
+        "uses_network"
+      ],
+      "destinations": [
+        "dynamic email recipient (sortOrder)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_perspectives",
+      "action": "ALLOW",
+      "grade": "A",
+      "destinations": [
+        "dynamic email recipient (includeCustom)"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "get_perspective_view",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "list_tags",
+      "action": "ALLOW",
+      "grade": "A",
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "create_tag",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "writes_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    }
+  ],
+  "tool_id": "omnifocus-mcp",
+  "tool_names": [
+    "add_omnifocus_task",
+    "add_project",
+    "batch_add_items",
+    "batch_remove_items",
+    "create_tag",
+    "dump_database",
+    "edit_item",
+    "get_perspective_view",
+    "list_perspectives",
+    "list_tags",
+    "query_omnifocus",
+    "remove_item"
+  ],
+  "vendor": "themotionmachine",
+  "version": "1.17.1"
 }

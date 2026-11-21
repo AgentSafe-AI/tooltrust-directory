@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `mcp-v0.8.0` |
 | **Vendor** | RyanAlberts |
-| **Stars** | ⭐ 1566 |
+| **Stars** | ⭐ 1571 |
 | **Language** | Python |
 | **Source** | [best-of-agent-harnesses](https://github.com/RyanAlberts/best-of-Agent-Harnesses) |
-| **Scan Date** | 2026-11-20 |
+| **Scan Date** | 2026-11-21 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
