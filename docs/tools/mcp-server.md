@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 2330 |
 | **Language** | Python |
 | **Source** | [mcp-server](https://github.com/financial-datasets/mcp-server) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 25 |
 | **Version** | `2.3.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 24784 |
+| **Stars** | ⭐ 24928 |
 | **Language** | Python |
 | **Source** | [python-sdk](https://github.com/modelcontextprotocol/python-sdk) |
 | **Scan Date** | 2026-11-01 |

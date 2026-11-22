@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `3.1.3` |
 | **Vendor** | dataforseo |
-| **Stars** | ⭐ 263 |
+| **Stars** | ⭐ 262 |
 | **npm Package** | `dataforseo-mcp-server` |
-| **npm Downloads (30d)** | 50.5k |
+| **npm Downloads (30d)** | 49.1k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

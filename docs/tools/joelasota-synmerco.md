@@ -15,7 +15,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [joelasota-synmerco](https://smithery.ai/server/joelasota/synmerco) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

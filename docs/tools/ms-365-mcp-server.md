@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `0.190.2` |
 | **Vendor** | Softeria |
-| **Stars** | ⭐ 1159 |
+| **Stars** | ⭐ 1161 |
 | **npm Package** | `@softeria/ms-365-mcp-server` |
-| **npm Downloads (30d)** | 360.6k |
+| **npm Downloads (30d)** | 378.2k |
 | **Language** | TypeScript |
 | **Source** | [ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -527,7 +527,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "skiptoken" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -539,7 +539,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "skiptoken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -7079,7 +7079,7 @@ Tool requests broad permissions (exec/fs/network). Validate input parameters usi
 **Severity:** Info
 
 **Description:**
-input parameter "token" accepts a credential (informational; not evidence of insecure handling)
+input parameter "skiptoken" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.
@@ -7091,7 +7091,7 @@ Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1
 **Severity:** Info
 
 **Description:**
-input parameter "skiptoken" accepts a credential (informational; not evidence of insecure handling)
+input parameter "token" accepts a credential (informational; not evidence of insecure handling)
 
 **Recommendation:**
 Avoid accepting raw credentials as input parameters. Use secret managers (e.g. 1Password CLI, AWS Secrets Manager) and ensure credentials are never logged or stored in agent traces.

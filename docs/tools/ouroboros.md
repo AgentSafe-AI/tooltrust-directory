@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.59.9` |
 | **Vendor** | Q00 |
-| **Stars** | ⭐ 6329 |
+| **Stars** | ⭐ 6382 |
 | **Language** | Python |
 | **Source** | [ouroboros](https://github.com/Q00/ouroboros) |
 | **Scan Date** | 2026-11-01 |

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.6.73-beta.20261120.1` |
+| **Version** | `0.6.73-beta.20261121.1` |
 | **Vendor** | t8y2 |
-| **Stars** | ⭐ 31073 |
+| **Stars** | ⭐ 31107 |
 | **npm Package** | `dbx` |
-| **npm Downloads (30d)** | 24 |
+| **npm Downloads (30d)** | 25 |
 | **Language** | Rust |
 | **Source** | [dbx](https://github.com/t8y2/dbx) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `1.2.7` |
+| **Version** | `1.3.0` |
 | **Vendor** | 8enSmith |
 | **Stars** | ⭐ 103 |
 | **npm Package** | `mcp-open-library` |
-| **npm Downloads (30d)** | 1.6k |
+| **npm Downloads (30d)** | 1.4k |
 | **Language** | TypeScript |
 | **Source** | [mcp-open-library](https://github.com/8enSmith/mcp-open-library) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 4 |
-| Info     | 10 |
+| Info     | 12 |
 
 ## Detailed Findings
 
@@ -63,6 +63,30 @@ tool performs network or execution operations but declares no rate-limit, timeou
 
 **Recommendation:**
 Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
+
+---
+
+### ⚪ `AS-014` — DEPENDENCY_INVENTORY_UNAVAILABLE
+
+**Severity:** Info
+
+**Description:**
+No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.
+
+**Recommendation:**
+Review and remediate the identified issue.
 
 ---
 

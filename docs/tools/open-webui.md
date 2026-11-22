@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.12.5` |
 | **Vendor** | open-webui |
-| **Stars** | ⭐ 157884 |
+| **Stars** | ⭐ 159232 |
 | **npm Package** | `open-webui` |
 | **npm Downloads (30d)** | 224 |
 | **Language** | Python |

@@ -1,14 +1,14 @@
 {
   "tool_id": "financetoolkit",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-11-21T05:02:52.193387621Z",
+  "scan_date": "2026-11-22T04:19:40.009465675Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/JerBouma/FinanceToolkit",
   "category": "Developer Tools",
   "vendor": "JerBouma",
-  "stars": 5547,
+  "stars": 5554,
   "license": "MIT",
   "language": "Python",
   "description": "Transparent and Efficient Financial Analysis",
@@ -28,6 +28,22 @@
       "description": "Tool did not expose metadata.dependencies or repo_url, so supply-chain coverage is limited.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "liquidity"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: HTTP requests",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "profitability"
+    },
+    {
+      "id": "AS-011",
+      "severity": "Low",
+      "title": "DoS Resilience — Missing Rate Limit / Timeout",
+      "description": "tool performs network or execution operations but declares no rate-limit, timeout, or retry configuration",
+      "recommendation": "Declare explicit rate-limit, timeout, and retry configuration for all network and execution tools. Implement exponential back-off and surface resource state to the calling agent.",
+      "tool_name": "profitability"
     },
     {
       "id": "AS-014",
@@ -401,7 +417,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, HTTP requests",
+      "description": "declared capabilities: network access, database access, HTTP requests",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "rates"
     },
@@ -562,8 +578,8 @@
     "critical": 0,
     "high": 0,
     "medium": 0,
-    "low": 19,
-    "info": 49
+    "low": 20,
+    "info": 50
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -615,6 +631,9 @@
       "tool_name": "profitability",
       "action": "ALLOW",
       "grade": "A",
+      "behavior": [
+        "uses_network"
+      ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server."
     },
@@ -684,6 +703,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1755,6 +1775,12 @@
     },
     {
       "scan_date": "2026-11-20T05:07:12Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "2.3.4"
+    },
+    {
+      "scan_date": "2026-11-21T05:02:52Z",
       "grade": "A",
       "risk_score": 2,
       "version": "2.3.4"

@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-gutenberg-mcp-server",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-21T05:09:46.688604276Z",
+  "scan_date": "2026-11-22T04:25:48.025895953Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/gutenberg-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 6,
   "npm_package": "@cyanheads/gutenberg-mcp-server",
-  "npm_downloads_monthly": 1880,
+  "npm_downloads_monthly": 1867,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Search, browse, and read 78,000+ public-domain books from Project Gutenberg with full plain-text retrieval and offset/limit chunking via MCP. STDIO or Streamable HTTP.",
@@ -19,7 +19,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access, database access",
+      "description": "declared capabilities: network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "gutenberg_search_books"
     },
@@ -27,7 +27,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 11 properties (threshold: 10)",
+      "description": "input schema exposes 16 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "gutenberg_search_books"
     },
@@ -143,6 +143,8 @@
         "uses_network"
       ],
       "destinations": [
+        "dynamic email recipient (contributor)",
+        "dynamic email recipient (lcc)",
         "dynamic email recipient (topic)",
         "dynamic email recipient (translator)"
       ],
@@ -181,6 +183,7 @@
         "uses_network"
       ],
       "destinations": [
+        "dynamic email recipient (lcc)",
         "dynamic email recipient (topic)"
       ],
       "dependency_visibility": "No dependency data",
@@ -550,6 +553,12 @@
     },
     {
       "scan_date": "2026-11-20T05:13:00Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.3.3"
+    },
+    {
+      "scan_date": "2026-11-21T05:09:46Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.3.3"

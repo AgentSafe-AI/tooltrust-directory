@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `1.0` |
 | **Vendor** | OWASP |
-| **Stars** | ⭐ 92 |
+| **Stars** | ⭐ 95 |
 | **Source** | [owasp-mcp-governance-and-risk-project](https://github.com/OWASP/OWASP-MCP-Governance-and-Risk-Project) |
 | **Scan Date** | 2026-11-01 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |

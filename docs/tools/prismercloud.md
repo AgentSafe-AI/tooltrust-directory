@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.9.0` |
 | **Vendor** | Prismer-AI |
-| **Stars** | ⭐ 1363 |
+| **Stars** | ⭐ 1365 |
 | **npm Package** | `prismer-cloud-next` |
 | **Language** | TypeScript |
 | **Source** | [prismercloud](https://github.com/Prismer-AI/PrismerCloud) |

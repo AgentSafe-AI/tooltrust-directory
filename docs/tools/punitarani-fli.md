@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 3510 |
 | **Language** | Python |
 | **Source** | [punitarani-fli](https://github.com/punitarani/fli) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

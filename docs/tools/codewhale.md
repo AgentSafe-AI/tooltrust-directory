@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.10.2` |
 | **Vendor** | codewhale-hq |
-| **Stars** | ⭐ 41192 |
+| **Stars** | ⭐ 41196 |
 | **npm Package** | `codewhale` |
-| **npm Downloads (30d)** | 21.2k |
+| **npm Downloads (30d)** | 20.8k |
 | **Language** | Rust |
 | **Source** | [codewhale](https://github.com/codewhale-hq/Codewhale) |
-| **Scan Date** | 2026-11-21 |
+| **Scan Date** | 2026-11-22 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
