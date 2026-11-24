@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `3.9.5` |
 | **Vendor** | opensolon |
-| **Stars** | ⭐ 2802 |
+| **Stars** | ⭐ 2807 |
 | **Language** | Java |
 | **Source** | [solon](https://github.com/opensolon/solon) |
 | **Scan Date** | 2026-03-10 |

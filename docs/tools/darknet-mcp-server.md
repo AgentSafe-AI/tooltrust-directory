@@ -10,10 +10,10 @@
 | **Vendor** | badchars |
 | **Stars** | ⭐ 543 |
 | **npm Package** | `darknet-mcp-server` |
-| **npm Downloads (30d)** | 1.6k |
+| **npm Downloads (30d)** | 1.5k |
 | **Language** | TypeScript |
 | **Source** | [darknet-mcp-server](https://github.com/badchars/darknet-mcp-server) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

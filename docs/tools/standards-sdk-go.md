@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.20` |
 | **Vendor** | hashgraph-online |
-| **Stars** | ⭐ 321 |
+| **Stars** | ⭐ 322 |
 | **Language** | Go |
 | **Source** | [standards-sdk-go](https://github.com/hashgraph-online/standards-sdk-go) |
 | **Scan Date** | 2026-11-01 |

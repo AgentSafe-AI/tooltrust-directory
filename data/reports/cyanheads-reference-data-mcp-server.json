@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-reference-data-mcp-server",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "grade": "A",
   "risk_score": 2,
-  "scan_date": "2026-11-22T04:26:58.339070579Z",
+  "scan_date": "2026-11-24T07:59:40.679321155Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/reference-data-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 1,
   "npm_package": "@cyanheads/reference-data-mcp-server",
-  "npm_downloads_monthly": 1478,
+  "npm_downloads_monthly": 1901,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Look up countries, timezones, periodic table elements, physical constants, units, HTTP status codes, and MIME types via MCP. STDIO or Streamable HTTP.",
@@ -46,14 +46,6 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ref_geo_search"
-    },
-    {
-      "id": "AS-002",
-      "severity": "Info",
-      "title": "Excessive Permission Surface",
-      "description": "declared capabilities: database access",
-      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
-      "tool_name": "ref_timezone_lookup"
     },
     {
       "id": "AS-014",
@@ -158,6 +150,22 @@
       "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
       "recommendation": "Review and remediate the identified issue.",
       "tool_name": "ref_mime_type"
+    },
+    {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: database access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "ref_unicode_lookup"
+    },
+    {
+      "id": "AS-014",
+      "severity": "Info",
+      "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
+      "description": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command.",
+      "recommendation": "Review and remediate the identified issue.",
+      "tool_name": "ref_unicode_lookup"
     }
   ],
   "summary": {
@@ -165,7 +173,7 @@
     "high": 0,
     "medium": 0,
     "low": 3,
-    "info": 15
+    "info": 16
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -178,6 +186,7 @@
     "ref_mime_type",
     "ref_timezone_convert",
     "ref_timezone_lookup",
+    "ref_unicode_lookup",
     "ref_unit_convert"
   ],
   "tool_contexts": [
@@ -273,6 +282,16 @@
       "grade": "A",
       "behavior": [
         "reads_files"
+      ],
+      "dependency_visibility": "No dependency data",
+      "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
+    },
+    {
+      "tool_name": "ref_unicode_lookup",
+      "action": "ALLOW",
+      "grade": "A",
+      "behavior": [
+        "executes_commands"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -857,6 +876,12 @@
     },
     {
       "scan_date": "2026-11-21T05:10:50Z",
+      "grade": "A",
+      "risk_score": 2,
+      "version": "0.2.0"
+    },
+    {
+      "scan_date": "2026-11-22T04:26:58Z",
       "grade": "A",
       "risk_score": 2,
       "version": "0.2.0"

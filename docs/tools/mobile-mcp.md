@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.0.18` |
+| **Version** | `1.0.19` |
 | **Vendor** | mobile-next |
-| **Stars** | ⭐ 10790 |
+| **Stars** | ⭐ 10839 |
 | **npm Package** | `@mobilenext/mobile-mcp` |
-| **npm Downloads (30d)** | 231.0k |
+| **npm Downloads (30d)** | 232.0k |
 | **Language** | TypeScript |
 | **Source** | [mobile-mcp](https://github.com/mobile-next/mobile-mcp) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -26,7 +26,7 @@
 | High     | 0 |
 | Medium   | 0 |
 | Low      | 7 |
-| Info     | 50 |
+| Info     | 51 |
 
 ## Detailed Findings
 
@@ -231,6 +231,18 @@ No metadata.dependencies or repo_url were exposed by this MCP server, and no loc
 
 **Recommendation:**
 Review and remediate the identified issue.
+
+---
+
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
+
+**Severity:** Info
+
+**Description:**
+declared capabilities: environment variables
+
+**Recommendation:**
+Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
 
 ---
 

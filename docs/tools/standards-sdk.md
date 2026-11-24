@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.192` |
 | **Vendor** | hashgraph-online |
-| **Stars** | ⭐ 1281 |
+| **Stars** | ⭐ 1287 |
 | **npm Package** | `@hashgraphonline/standards-sdk` |
 | **npm Downloads (30d)** | 8.8k |
 | **Language** | TypeScript |

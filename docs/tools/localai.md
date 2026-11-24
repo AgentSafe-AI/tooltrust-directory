@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `5.0.1` |
 | **Vendor** | mudler |
-| **Stars** | ⭐ 50497 |
+| **Stars** | ⭐ 50519 |
 | **Language** | Go |
 | **Source** | [localai](https://github.com/mudler/LocalAI) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

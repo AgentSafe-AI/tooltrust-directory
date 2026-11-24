@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.20.0` |
 | **Vendor** | signal8ai |
-| **Stars** | ⭐ 425 |
+| **Stars** | ⭐ 52 |
 | **npm Package** | `@signal8ai/mcp` |
 | **npm Downloads (30d)** | 887 |
 | **Language** | TypeScript |

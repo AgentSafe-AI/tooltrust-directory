@@ -1,19 +1,16 @@
-# 🟠 caullenomdahl-nextjs-react-tailwind-assistant
+# 🟡 caullenomdahl-nextjs-react-tailwind-assistant
 
-> MCP server providing Next.js 15+ and Tailwind CSS documentation, Catalyst UI components, and template patterns
+> Your comprehensive AI companion for building modern Next.js applications with React and Tailwind CSS. This MCP server provides instant access to complete documentation, production-ready components, and battle-tested design patterns abstracted from professional templates.
 
 | Field | Value |
 |-------|-------|
-| **Grade** | **C** |
-| **Risk Score** | 32 |
-| **Version** | `0.5.7` |
-| **Vendor** | CaullenOmdahl |
-| **Stars** | ⭐ 3 |
-| **npm Package** | `nextjs-react-tailwind-assistant-mcp-server` |
-| **Language** | TypeScript |
-| **Source** | [caullenomdahl-nextjs-react-tailwind-assistant](https://github.com/CaullenOmdahl/Nextjs-React-Tailwind-Assistant) |
-| **Scan Date** | 2026-04-03 |
-| **Scanner** | tooltrust-scanner/v0.3.4 |
+| **Grade** | **B** |
+| **Risk Score** | 17 |
+| **Version** | `smithery` |
+| **Vendor** | Smithery |
+| **Source** | [caullenomdahl-nextjs-react-tailwind-assistant](https://smithery.ai/server/CaullenOmdahl/nextjs-react-tailwind-assistant) |
+| **Scan Date** | 2026-11-24 |
+| **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
 
@@ -22,19 +19,19 @@
 | Severity | Count |
 |----------|:-----:|
 | Critical | 0 |
-| High     | 6 |
-| Medium   | 3 |
+| High     | 1 |
+| Medium   | 0 |
 | Low      | 5 |
-| Info     | 16 |
+| Info     | 22 |
 
 ## Detailed Findings
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -77,24 +74,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+declared capabilities: network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -125,24 +110,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
-
-**Description:**
-tool declares network permission
-
-**Recommendation:**
-Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
-
----
-
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
-
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares db permission
+declared capabilities: network access, database access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -221,12 +194,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares exec permission
+declared capabilities: code/command execution
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -269,12 +242,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟠 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** High
+**Severity:** Info
 
 **Description:**
-tool declares network permission
+declared capabilities: network access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.
@@ -365,12 +338,12 @@ Review and remediate the identified issue.
 
 ---
 
-### 🟡 🔑 `AS-002` — Excessive Permission Surface
+### ⚪ 🔑 `AS-002` — Excessive Permission Surface
 
-**Severity:** Medium
+**Severity:** Info
 
 **Description:**
-tool declares fs permission
+declared capabilities: filesystem access
 
 **Recommendation:**
 Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.

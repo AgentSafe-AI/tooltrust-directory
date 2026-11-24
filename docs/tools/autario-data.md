@@ -31,7 +31,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [autario-data](https://smithery.ai/server/autario/data) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

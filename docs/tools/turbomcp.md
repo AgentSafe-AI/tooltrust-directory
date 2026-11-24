@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 0 |
-| **Version** | `4.0.0-alpha.6` |
+| **Version** | `4.0.0-beta.1` |
 | **Vendor** | Epistates |
 | **Stars** | ⭐ 100 |
 | **Language** | Rust |
 | **Source** | [turbomcp](https://github.com/Epistates/turbomcp) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

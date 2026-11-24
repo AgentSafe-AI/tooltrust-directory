@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.12.732` |
 | **Vendor** | stackql |
-| **Stars** | ⭐ 1075 |
+| **Stars** | ⭐ 1095 |
 | **Language** | Go |
 | **Source** | [stackql](https://github.com/stackql/stackql) |
 | **Scan Date** | 2026-10-15 |

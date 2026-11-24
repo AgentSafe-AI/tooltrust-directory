@@ -8,11 +8,11 @@
 | **Risk Score** | 0 |
 | **Version** | `1.77.0` |
 | **Vendor** | eclipse-theia |
-| **Stars** | ⭐ 21782 |
+| **Stars** | ⭐ 21785 |
 | **npm Package** | `@theia/monorepo` |
 | **Language** | TypeScript |
 | **Source** | [theia](https://github.com/eclipse-theia/theia) |
-| **Scan Date** | 2026-11-22 |
+| **Scan Date** | 2026-11-24 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

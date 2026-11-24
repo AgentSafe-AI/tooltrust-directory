@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.155.0` |
 | **Vendor** | thClaws |
-| **Stars** | ⭐ 1257 |
+| **Stars** | ⭐ 1267 |
 | **Language** | Rust |
 | **Source** | [thclaws](https://github.com/thClaws/thClaws) |
 | **Scan Date** | 2026-11-13 |
