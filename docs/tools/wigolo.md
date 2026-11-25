@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `0.3.1` |
 | **Vendor** | KnockOutEZ |
-| **Stars** | ⭐ 5539 |
+| **Stars** | ⭐ 5565 |
 | **npm Package** | `wigolo` |
 | **npm Downloads (30d)** | 7.2k |
 | **Language** | TypeScript |

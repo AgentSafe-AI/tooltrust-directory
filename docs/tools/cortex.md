@@ -12,7 +12,7 @@
 | **npm Package** | `cortex-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [cortex](https://github.com/cortex-docs/cortex) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

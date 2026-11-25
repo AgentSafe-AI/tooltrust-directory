@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `wren-v0.17.1` |
 | **Vendor** | Canner |
-| **Stars** | ⭐ 18118 |
+| **Stars** | ⭐ 18390 |
 | **Language** | Python |
 | **Source** | [wrenai](https://github.com/Canner/WrenAI) |
 | **Scan Date** | 2026-11-08 |

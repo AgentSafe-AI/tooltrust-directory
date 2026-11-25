@@ -10,10 +10,9 @@
 | **Vendor** | ceorkm |
 | **Stars** | ⭐ 76 |
 | **npm Package** | `reactbits-dev-mcp-server` |
-| **npm Downloads (30d)** | 1.8k |
 | **Language** | TypeScript |
 | **Source** | [reactbits-mcp-server](https://github.com/ceorkm/reactbits-mcp-server) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

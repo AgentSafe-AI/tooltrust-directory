@@ -1,6 +1,6 @@
 # 🟢 codewhale
 
-> An open-source coding agent for your terminal, written in Rust. It works with any model, can split one task across several agents, and every line of it is yours to read.
+> Open-source Rust coding agent for terminal, web, and desktop. Any model, multi-agent fleets, MCP & plugins, OS sandboxing, and session receipts.
 
 | Field | Value |
 |-------|-------|
@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `0.10.4` |
 | **Vendor** | codewhale-hq |
-| **Stars** | ⭐ 41198 |
+| **Stars** | ⭐ 41205 |
 | **npm Package** | `codewhale` |
-| **npm Downloads (30d)** | 19.8k |
+| **npm Downloads (30d)** | 20.0k |
 | **Language** | Rust |
 | **Source** | [codewhale](https://github.com/codewhale-hq/Codewhale) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

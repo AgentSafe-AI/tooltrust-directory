@@ -8,11 +8,11 @@
 | **Risk Score** | 2 |
 | **Version** | `0.1.1` |
 | **Vendor** | JosssphZhou |
-| **Stars** | ⭐ 1898 |
+| **Stars** | ⭐ 1928 |
 | **npm Package** | `poki-mcp` |
 | **Language** | Swift |
 | **Source** | [poki](https://github.com/JosssphZhou/poki) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -10,10 +10,9 @@
 | **Vendor** | MFYDev |
 | **Stars** | ⭐ 248 |
 | **npm Package** | `@fanyangmeng/ghost-mcp` |
-| **npm Downloads (30d)** | 117.4k |
 | **Language** | TypeScript |
 | **Source** | [ghost-mcp](https://github.com/MFYDev/ghost-mcp) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

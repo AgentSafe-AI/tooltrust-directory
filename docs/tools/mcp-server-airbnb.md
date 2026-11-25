@@ -10,10 +10,10 @@
 | **Vendor** | openbnb-org |
 | **Stars** | ⭐ 569 |
 | **npm Package** | `@openbnb/mcp-server-airbnb` |
-| **npm Downloads (30d)** | 13.0k |
+| **npm Downloads (30d)** | 13.1k |
 | **Language** | JavaScript |
 | **Source** | [mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

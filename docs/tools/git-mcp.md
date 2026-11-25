@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `1.0.0` |
 | **Vendor** | idosal |
-| **Stars** | ⭐ 8533 |
+| **Stars** | ⭐ 8534 |
 | **npm Package** | `git-mcp` |
-| **npm Downloads (30d)** | 166 |
+| **npm Downloads (30d)** | 167 |
 | **Language** | TypeScript |
 | **Source** | [git-mcp](https://github.com/idosal/git-mcp) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

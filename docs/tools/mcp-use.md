@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `1.5.0` |
 | **Vendor** | mcp-use |
-| **Stars** | ⭐ 11004 |
+| **Stars** | ⭐ 11005 |
 | **Language** | TypeScript |
 | **Source** | [mcp-use](https://github.com/mcp-use/mcp-use) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

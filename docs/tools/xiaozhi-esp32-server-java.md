@@ -8,7 +8,7 @@
 | **Risk Score** | 8 |
 | **Version** | `4.1.0` |
 | **Vendor** | joey-zhou |
-| **Stars** | ⭐ 1417 |
+| **Stars** | ⭐ 1435 |
 | **Language** | Java |
 | **Source** | [xiaozhi-esp32-server-java](https://github.com/joey-zhou/xiaozhi-esp32-server-java) |
 | **Scan Date** | 2026-03-31 |

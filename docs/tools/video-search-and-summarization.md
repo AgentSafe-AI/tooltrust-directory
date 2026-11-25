@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.3.0` |
 | **Vendor** | NVIDIA-AI-Blueprints |
-| **Stars** | ⭐ 2006 |
+| **Stars** | ⭐ 2008 |
 | **Language** | Python |
 | **Source** | [video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -10,10 +10,10 @@
 | **Vendor** | themotionmachine |
 | **Stars** | ⭐ 256 |
 | **npm Package** | `omnifocus-mcp` |
-| **npm Downloads (30d)** | 2.5k |
+| **npm Downloads (30d)** | 2.6k |
 | **Language** | TypeScript |
 | **Source** | [omnifocus-mcp](https://github.com/themotionmachine/OmniFocus-MCP) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.5.0` |
 | **Vendor** | modelcontextprotocol |
-| **Stars** | ⭐ 92203 |
+| **Stars** | ⭐ 92237 |
 | **npm Package** | `@modelcontextprotocol/server-github` |
-| **npm Downloads (30d)** | 606.4k |
+| **npm Downloads (30d)** | 599.3k |
 | **Language** | TypeScript |
 | **Source** | [mcp-server-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

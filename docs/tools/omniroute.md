@@ -8,12 +8,12 @@
 | **Risk Score** | 0 |
 | **Version** | `3.8.54` |
 | **Vendor** | cheaper-inference |
-| **Stars** | ⭐ 89953 |
+| **Stars** | ⭐ 90172 |
 | **npm Package** | `omniroute` |
-| **npm Downloads (30d)** | 385.2k |
+| **npm Downloads (30d)** | 383.0k |
 | **Language** | TypeScript |
 | **Source** | [omniroute](https://github.com/cheaper-inference/OmniRoute) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

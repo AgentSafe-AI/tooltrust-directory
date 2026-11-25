@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `cli@0.50.0` |
+| **Version** | `cli@0.51.0` |
 | **Vendor** | getsentry |
-| **Stars** | ⭐ 974 |
+| **Stars** | ⭐ 976 |
 | **npm Package** | `sentry-mcp` |
-| **npm Downloads (30d)** | 189 |
+| **npm Downloads (30d)** | 184 |
 | **Language** | TypeScript |
 | **Source** | [sentry-mcp](https://github.com/getsentry/toolkit) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

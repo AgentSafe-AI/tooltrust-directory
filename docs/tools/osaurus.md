@@ -11,7 +11,7 @@
 | **Stars** | ⭐ 8205 |
 | **Language** | Swift |
 | **Source** | [osaurus](https://github.com/osaurus-ai/osaurus) |
-| **Scan Date** | 2026-11-24 |
+| **Scan Date** | 2026-11-25 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

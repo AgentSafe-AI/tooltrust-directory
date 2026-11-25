@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.10.0` |
 | **Vendor** | AmoyLab |
-| **Stars** | ⭐ 2252 |
+| **Stars** | ⭐ 2263 |
 | **Language** | TypeScript |
 | **Source** | [unla](https://github.com/AmoyLab/Unla) |
 | **Scan Date** | 2026-10-15 |

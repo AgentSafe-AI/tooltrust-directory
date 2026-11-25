@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.21.1` |
 | **Vendor** | trailhq |
-| **Stars** | ⭐ 11153 |
+| **Stars** | ⭐ 11479 |
 | **npm Package** | `@nanonets/graft` |
 | **npm Downloads (30d)** | 91.2k |
 | **Language** | TypeScript |
