@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `23.7.1` |
+| **Version** | `23.7.2` |
 | **Vendor** | beenuar |
-| **Stars** | ⭐ 7814 |
+| **Stars** | ⭐ 7952 |
 | **npm Package** | `aisoc-monorepo` |
 | **Language** | Python |
 | **Source** | [aisoc](https://github.com/beenuar/AiSOC) |
-| **Scan Date** | 2026-11-25 |
+| **Scan Date** | 2026-11-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

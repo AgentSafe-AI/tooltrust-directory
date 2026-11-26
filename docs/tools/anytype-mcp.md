@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `2.0.1` |
 | **Vendor** | anyproto |
-| **Stars** | ⭐ 539 |
+| **Stars** | ⭐ 548 |
 | **npm Package** | `@anyproto/anytype-mcp` |
 | **npm Downloads (30d)** | 5.8k |
 | **Language** | TypeScript |

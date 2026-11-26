@@ -1,16 +1,16 @@
 {
   "tool_id": "cyanheads-usaspending-mcp-server",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "grade": "A",
   "risk_score": 4,
-  "scan_date": "2026-11-25T06:24:37.531071969Z",
+  "scan_date": "2026-11-26T06:20:07.964539747Z",
   "scanner": "tooltrust-scanner/v0.3.20",
   "source_url": "https://github.com/cyanheads/usaspending-mcp-server",
   "category": "Developer Tools",
   "vendor": "cyanheads",
   "stars": 5,
   "npm_package": "@cyanheads/usaspending-mcp-server",
-  "npm_downloads_monthly": 2176,
+  "npm_downloads_monthly": 2144,
   "license": "Apache-2.0",
   "language": "TypeScript",
   "description": "Access US federal award, recipient, agency, and spending analytics data from USAspending.gov via MCP. STDIO or Streamable HTTP.",
@@ -32,6 +32,14 @@
       "tool_name": "usaspending_list_agencies"
     },
     {
+      "id": "AS-002",
+      "severity": "Info",
+      "title": "Excessive Permission Surface",
+      "description": "declared capabilities: filesystem access",
+      "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
+      "tool_name": "usaspending_autocomplete_filters"
+    },
+    {
       "id": "AS-014",
       "severity": "Info",
       "title": "DEPENDENCY_INVENTORY_UNAVAILABLE",
@@ -51,7 +59,7 @@
       "id": "AS-002",
       "severity": "Low",
       "title": "Excessive Permission Surface",
-      "description": "input schema exposes 18 properties (threshold: 10)",
+      "description": "input schema exposes 21 properties (threshold: 10)",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "usaspending_search_awards"
     },
@@ -75,7 +83,7 @@
       "id": "AS-002",
       "severity": "Info",
       "title": "Excessive Permission Surface",
-      "description": "declared capabilities: network access",
+      "description": "declared capabilities: code/command execution, network access",
       "recommendation": "Tool requests broad permissions (exec/fs/network). Validate input parameters using Enums where possible, and restrict file system operations to explicit allowed directories.",
       "tool_name": "usaspending_get_award"
     },
@@ -349,7 +357,7 @@
     "high": 0,
     "medium": 0,
     "low": 11,
-    "info": 30
+    "info": 31
   },
   "methodology": "https://github.com/AgentSafe-AI/tooltrust-directory/blob/main/docs/methodology.md",
   "tool_names": [
@@ -388,7 +396,8 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
-        "executes_commands"
+        "executes_commands",
+        "reads_files"
       ],
       "dependency_visibility": "No dependency data",
       "dependency_note": "No metadata.dependencies or repo_url were exposed by this MCP server, and no local project manifest could be inferred from the launch command."
@@ -411,6 +420,7 @@
       "action": "ALLOW",
       "grade": "A",
       "behavior": [
+        "executes_commands",
         "uses_network"
       ],
       "dependency_visibility": "No dependency data",
@@ -1219,6 +1229,12 @@
     },
     {
       "scan_date": "2026-11-24T07:58:39Z",
+      "grade": "A",
+      "risk_score": 4,
+      "version": "0.7.3"
+    },
+    {
+      "scan_date": "2026-11-25T06:24:37Z",
       "grade": "A",
       "risk_score": 4,
       "version": "0.7.3"

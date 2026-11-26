@@ -6,14 +6,14 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 4 |
-| **Version** | `0.24.0` |
+| **Version** | `0.25.0` |
 | **Vendor** | Get-Concord-AI |
-| **Stars** | ⭐ 1549 |
+| **Stars** | ⭐ 1579 |
 | **npm Package** | `@concord-ai/concord-mcp` |
 | **npm Downloads (30d)** | 4.3k |
 | **Language** | TypeScript |
 | **Source** | [concord-mcp](https://github.com/Get-Concord-AI/concord-mcp) |
-| **Scan Date** | 2026-11-25 |
+| **Scan Date** | 2026-11-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

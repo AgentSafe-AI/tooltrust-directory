@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.21.35` |
 | **Vendor** | callstack |
-| **Stars** | ⭐ 5327 |
+| **Stars** | ⭐ 5516 |
 | **npm Package** | `agent-device` |
 | **npm Downloads (30d)** | 1.3M |
 | **Language** | TypeScript |

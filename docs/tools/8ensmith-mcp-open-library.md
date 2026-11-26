@@ -8,7 +8,7 @@
 | **Risk Score** | 15 |
 | **Version** | `1.0.2` |
 | **Vendor** | 8enSmith |
-| **Stars** | ⭐ 102 |
+| **Stars** | ⭐ 103 |
 | **npm Package** | `mcp-open-library` |
 | **npm Downloads (30d)** | 742 |
 | **Language** | TypeScript |

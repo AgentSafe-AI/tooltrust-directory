@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `0.1.21` |
 | **Vendor** | vostride |
-| **Stars** | ⭐ 852 |
+| **Stars** | ⭐ 822 |
 | **npm Package** | `agent-qa-monorepo` |
 | **Language** | TypeScript |
 | **Source** | [agent-qa](https://github.com/vostride/agent-qa) |

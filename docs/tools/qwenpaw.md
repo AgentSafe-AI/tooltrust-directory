@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.3.1-beta.1` |
 | **Vendor** | agentscope-ai |
-| **Stars** | ⭐ 38184 |
+| **Stars** | ⭐ 38212 |
 | **Language** | Python |
 | **Source** | [qwenpaw](https://github.com/agentscope-ai/QwenPaw) |
-| **Scan Date** | 2026-11-25 |
+| **Scan Date** | 2026-11-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

@@ -8,7 +8,7 @@
 | **Risk Score** | 27 |
 | **Version** | `1.3.0` |
 | **Vendor** | mukul975 |
-| **Stars** | ⭐ 35892 |
+| **Stars** | ⭐ 36787 |
 | **Language** | Python |
 | **Source** | [anthropic-cybersecurity-skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) |
 | **Scan Date** | 2026-11-01 |

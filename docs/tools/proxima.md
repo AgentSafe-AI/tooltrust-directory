@@ -10,10 +10,10 @@
 | **Vendor** | Zen4-bit |
 | **Stars** | ⭐ 1221 |
 | **npm Package** | `proxima` |
-| **npm Downloads (30d)** | 192 |
+| **npm Downloads (30d)** | 188 |
 | **Language** | JavaScript |
 | **Source** | [proxima](https://github.com/Zen4-bit/Proxima) |
-| **Scan Date** | 2026-11-25 |
+| **Scan Date** | 2026-11-26 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

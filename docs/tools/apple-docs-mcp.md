@@ -8,7 +8,7 @@
 | **Risk Score** | 17 |
 | **Version** | `1.0.26` |
 | **Vendor** | kimsungwhee |
-| **Stars** | ⭐ 1388 |
+| **Stars** | ⭐ 1390 |
 | **npm Package** | `@kimsungwhee/apple-docs-mcp` |
 | **npm Downloads (30d)** | 4.5k |
 | **Language** | TypeScript |

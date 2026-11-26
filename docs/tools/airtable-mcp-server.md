@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.14.0` |
 | **Vendor** | domdomegg |
-| **Stars** | ⭐ 456 |
+| **Stars** | ⭐ 455 |
 | **npm Package** | `airtable-mcp-server` |
 | **npm Downloads (30d)** | 11.7k |
 | **Language** | TypeScript |

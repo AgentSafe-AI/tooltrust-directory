@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `1.23.0` |
 | **Vendor** | opena2a-org |
-| **Stars** | ⭐ 67 |
+| **Stars** | ⭐ 70 |
 | **npm Package** | `agent-identity-management` |
 | **Language** | Go |
 | **Source** | [agent-identity-management](https://github.com/opena2a-org/agent-identity-management) |
