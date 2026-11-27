@@ -6,13 +6,13 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.1.8` |
+| **Version** | `0.1.9` |
 | **Vendor** | XinaTian |
-| **Stars** | ⭐ 5029 |
+| **Stars** | ⭐ 4712 |
 | **npm Package** | `mrnote-editors` |
 | **Language** | TypeScript |
 | **Source** | [mroffice](https://github.com/XinaTian/MROffice) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

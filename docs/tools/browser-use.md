@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `0.13.14` |
 | **Vendor** | browser-use |
-| **Stars** | ⭐ 120771 |
+| **Stars** | ⭐ 122175 |
 | **Language** | Python |
 | **Source** | [browser-use](https://github.com/browser-use/browser-use) |
 | **Scan Date** | 2026-11-09 |

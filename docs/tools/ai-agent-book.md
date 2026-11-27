@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `3.1` |
 | **Vendor** | bojieli |
-| **Stars** | ⭐ 59969 |
+| **Stars** | ⭐ 60046 |
 | **Language** | Python |
 | **Source** | [ai-agent-book](https://github.com/bojieli/ai-agent-book) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

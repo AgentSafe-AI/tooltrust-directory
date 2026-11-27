@@ -8,12 +8,12 @@
 | **Risk Score** | 2 |
 | **Version** | `2.1.0` |
 | **Vendor** | bytebase |
-| **Stars** | ⭐ 3994 |
+| **Stars** | ⭐ 4001 |
 | **npm Package** | `dbhub` |
-| **npm Downloads (30d)** | 83 |
+| **npm Downloads (30d)** | 85 |
 | **Language** | TypeScript |
 | **Source** | [dbhub](https://github.com/bytebase/dbhub) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

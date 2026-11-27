@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `2.12.0` |
 | **Vendor** | ihor-sokoliuk |
-| **Stars** | ⭐ 1385 |
+| **Stars** | ⭐ 1390 |
 | **npm Package** | `mcp-searxng` |
-| **npm Downloads (30d)** | 69.5k |
+| **npm Downloads (30d)** | 68.9k |
 | **Language** | TypeScript |
 | **Source** | [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

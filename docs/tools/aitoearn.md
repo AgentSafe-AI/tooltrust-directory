@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.5.0` |
 | **Vendor** | yikart |
-| **Stars** | ⭐ 28731 |
+| **Stars** | ⭐ 28767 |
 | **Language** | TypeScript |
 | **Source** | [aitoearn](https://github.com/yikart/AiToEarn) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

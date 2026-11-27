@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `2.9.0` |
 | **Vendor** | microsoft |
-| **Stars** | ⭐ 2085 |
+| **Stars** | ⭐ 2097 |
 | **npm Package** | `@azure-devops/mcp` |
 | **npm Downloads (30d)** | 500.2k |
 | **Language** | TypeScript |

@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `zotero-research-library-current` |
 | **Vendor** | mvanhorn |
-| **Stars** | ⭐ 2154 |
+| **Stars** | ⭐ 2159 |
 | **Language** | Go |
 | **Source** | [printing-press-library](https://github.com/mvanhorn/printing-press-library) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

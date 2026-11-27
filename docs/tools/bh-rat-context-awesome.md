@@ -8,7 +8,7 @@
 | **Risk Score** | 0 |
 | **Version** | `0.1.1` |
 | **Vendor** | bh-rat |
-| **Stars** | ⭐ 61 |
+| **Stars** | ⭐ 64 |
 | **npm Package** | `context-awesome` |
 | **npm Downloads (30d)** | 227 |
 | **Language** | TypeScript |

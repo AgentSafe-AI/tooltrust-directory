@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `1.10.0` |
+| **Version** | `1.11.0` |
 | **Vendor** | withcoral |
-| **Stars** | ⭐ 5032 |
+| **Stars** | ⭐ 5031 |
 | **Language** | Rust |
 | **Source** | [coral](https://github.com/withcoral/coral) |
-| **Scan Date** | 2026-11-26 |
+| **Scan Date** | 2026-11-27 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
