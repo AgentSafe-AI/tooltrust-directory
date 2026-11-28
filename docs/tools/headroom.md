@@ -8,10 +8,10 @@
 | **Risk Score** | 2 |
 | **Version** | `0.45.0` |
 | **Vendor** | headroomlabs-ai |
-| **Stars** | ⭐ 80955 |
+| **Stars** | ⭐ 81017 |
 | **Language** | Python |
 | **Source** | [headroom](https://github.com/headroomlabs-ai/headroom) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

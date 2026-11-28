@@ -8,7 +8,7 @@
 | **Risk Score** | 4 |
 | **Version** | `2.8.5` |
 | **Vendor** | cyanheads |
-| **Stars** | ⭐ 100 |
+| **Stars** | ⭐ 103 |
 | **npm Package** | `clinicaltrialsgov-mcp-server` |
 | **npm Downloads (30d)** | 6.1k |
 | **Language** | TypeScript |

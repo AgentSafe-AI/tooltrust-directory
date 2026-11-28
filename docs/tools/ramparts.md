@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **I** |
 | **Risk Score** | 0 |
-| **Version** | `0.8.10` |
+| **Version** | `0.9.0` |
 | **Vendor** | highflame-ai |
-| **Stars** | ⭐ 101 |
+| **Stars** | ⭐ 100 |
 | **Language** | Rust |
 | **Source** | [ramparts](https://github.com/highflame-ai/ramparts) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

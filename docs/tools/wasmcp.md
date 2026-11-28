@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `wit-v0.4.0` |
 | **Vendor** | wasmcp |
-| **Stars** | ⭐ 93 |
+| **Stars** | ⭐ 94 |
 | **Language** | Rust |
 | **Source** | [wasmcp](https://github.com/wasmcp/wasmcp) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

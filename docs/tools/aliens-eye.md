@@ -8,10 +8,10 @@
 | **Risk Score** | 0 |
 | **Version** | `2.12.0` |
 | **Vendor** | arxhr007 |
-| **Stars** | ⭐ 4905 |
+| **Stars** | ⭐ 4929 |
 | **Language** | Python |
 | **Source** | [aliens-eye](https://github.com/arxhr007/Aliens_eye) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

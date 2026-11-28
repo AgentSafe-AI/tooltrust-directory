@@ -8,7 +8,7 @@
 | **Risk Score** | 2 |
 | **Version** | `3.0.0` |
 | **Vendor** | Team-Commonly |
-| **Stars** | ⭐ 1410 |
+| **Stars** | ⭐ 1417 |
 | **npm Package** | `commonly` |
 | **npm Downloads (30d)** | 15 |
 | **Language** | JavaScript |

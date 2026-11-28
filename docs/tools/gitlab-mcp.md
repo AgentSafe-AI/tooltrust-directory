@@ -8,12 +8,12 @@
 | **Risk Score** | 4 |
 | **Version** | `3.1.0` |
 | **Vendor** | zereight |
-| **Stars** | ⭐ 2128 |
+| **Stars** | ⭐ 2129 |
 | **npm Package** | `@zereight/mcp-gitlab` |
-| **npm Downloads (30d)** | 921.6k |
+| **npm Downloads (30d)** | 912.7k |
 | **Language** | TypeScript |
 | **Source** | [gitlab-mcp](https://github.com/zereight/gitlab-mcp) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

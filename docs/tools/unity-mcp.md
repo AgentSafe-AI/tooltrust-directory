@@ -6,12 +6,12 @@
 |-------|-------|
 | **Grade** | **A** |
 | **Risk Score** | 2 |
-| **Version** | `com.ivanmurzak.unity.mcp.timeline/2.1.7` |
+| **Version** | `com.ivanmurzak.unity.mcp.timeline/2.1.8` |
 | **Vendor** | IvanMurzak |
-| **Stars** | ⭐ 4704 |
+| **Stars** | ⭐ 4712 |
 | **Language** | C# |
 | **Source** | [unity-mcp](https://github.com/IvanMurzak/Unity-MCP) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
@@ -1257,7 +1257,7 @@ Review and remediate the identified issue.
 **Severity:** Info
 
 **Description:**
-Tool 'script-execute' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
+Tool 'csharp-exec' has no description - agents cannot reason about its purpose, and static analysis coverage is limited
 
 **Recommendation:**
 Review and remediate the identified issue.

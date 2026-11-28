@@ -25,7 +25,7 @@
 | **Version** | `smithery` |
 | **Vendor** | Smithery |
 | **Source** | [kindrat86-mcp-deal-flow-signal](https://smithery.ai/server/kindrat86/mcp-deal-flow-signal) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---

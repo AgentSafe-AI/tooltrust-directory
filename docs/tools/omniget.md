@@ -8,11 +8,11 @@
 | **Risk Score** | 27 |
 | **Version** | `1.0.2` |
 | **Vendor** | tonhowtf |
-| **Stars** | ⭐ 14732 |
+| **Stars** | ⭐ 14749 |
 | **npm Package** | `omniget` |
 | **Language** | Rust |
 | **Source** | [omniget](https://github.com/tonhowtf/omniget) |
-| **Scan Date** | 2026-11-27 |
+| **Scan Date** | 2026-11-28 |
 | **Scanner** | tooltrust-scanner/v0.3.20 |
 
 ---
